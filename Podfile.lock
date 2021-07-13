@@ -1,0 +1,66 @@
+PODS:
+  - Alamofire (5.4.3)
+  - ApphudSDK (2.2.1)
+  - Kingfisher (6.3.0)
+  - lottie-ios (3.2.3)
+  - MarqueeLabel (4.0.5)
+  - MBProgressHUD (1.2.0)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - SkeletonView (1.21.0)
+  - SnapKit (5.0.1)
+  - ViewAnimator (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - ApphudSDK
+  - Kingfisher
+  - lottie-ios
+  - MBProgressHUD (~> 1.2.0)
+  - NotificationBannerSwift (~> 3.0.0)
+  - RxCocoa (= 6.2.0)
+  - RxSwift (= 6.2.0)
+  - SkeletonView
+  - ViewAnimator
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ApphudSDK
+    - Kingfisher
+    - lottie-ios
+    - MarqueeLabel
+    - MBProgressHUD
+    - NotificationBannerSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SkeletonView
+    - SnapKit
+    - ViewAnimator
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  ApphudSDK: 9626b05b8246a3cfa6c6a675c46a62922c5e8e54
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SkeletonView: 2398e9081a16f6a5d52ebabaed5d5b19873ed8f3
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
+
+PODFILE CHECKSUM: f91d1756b6115726cc22033841905296092c77d8
+
+COCOAPODS: 1.8.4
