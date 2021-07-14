@@ -7,23 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D13A7DB269F3D0F00BD9922 /* RingtoneListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13A7D9269F3D0F00BD9922 /* RingtoneListViewController.swift */; };
+		0D13A7DC269F3D0F00BD9922 /* RingtoneListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D13A7DA269F3D0F00BD9922 /* RingtoneListViewController.xib */; };
+		0D13A7DE269F3F0C00BD9922 /* Ringtone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13A7DD269F3F0C00BD9922 /* Ringtone.swift */; };
+		0D13A7E0269F419C00BD9922 /* RingtoneListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13A7DF269F419C00BD9922 /* RingtoneListViewModel.swift */; };
+		0D13A7E4269F443500BD9922 /* RingtoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13A7E2269F443500BD9922 /* RingtoneTableViewCell.swift */; };
+		0D13A7E5269F443500BD9922 /* RingtoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D13A7E3269F443500BD9922 /* RingtoneTableViewCell.xib */; };
 		0D14535B269DA6F400458B46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14535A269DA6F400458B46 /* AppDelegate.swift */; };
-		0D14535D269DA6F400458B46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14535C269DA6F400458B46 /* SceneDelegate.swift */; };
-		0D14535F269DA6F400458B46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14535E269DA6F400458B46 /* ViewController.swift */; };
-		0D145362269DA6F400458B46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D145360269DA6F400458B46 /* Main.storyboard */; };
 		0D145364269DA6F500458B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D145363269DA6F500458B46 /* Assets.xcassets */; };
-		0D145367269DA6F500458B46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D145365269DA6F500458B46 /* LaunchScreen.storyboard */; };
+		0D6CA821269EEE1300ED02D2 /* RingtonePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA820269EEE1300ED02D2 /* RingtonePlayerView.swift */; };
+		0D6CA823269EF11100ED02D2 /* VerticalButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CA822269EF11100ED02D2 /* VerticalButton.xib */; };
+		0D6CA825269EF15800ED02D2 /* VerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA824269EF15800ED02D2 /* VerticalButton.swift */; };
+		0D6CA827269EF5AB00ED02D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA826269EF5AB00ED02D2 /* UIView.swift */; };
+		0DECFF75269DD61F00659800 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF74269DD61F00659800 /* call.json */; };
+		0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */; };
+		0DECFF79269DD64C00659800 /* LaunchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */; };
+		0DECFF7C269DE9F700659800 /* SwipeUpForMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF7A269DE9F700659800 /* SwipeUpForMoreViewController.swift */; };
+		0DECFF7D269DE9F700659800 /* SwipeUpForMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF7B269DE9F700659800 /* SwipeUpForMoreViewController.xib */; };
+		0DECFF7F269DEA5200659800 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF7E269DEA5200659800 /* TabbarController.swift */; };
+		0DECFF83269DF6D300659800 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF82269DF6D300659800 /* UIImage.swift */; };
+		0DECFF86269DFCB500659800 /* AppRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF84269DFCB500659800 /* AppRatingViewController.swift */; };
+		0DECFF87269DFCB500659800 /* AppRatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF85269DFCB500659800 /* AppRatingViewController.xib */; };
+		0DECFF8D269E083F00659800 /* RingtonePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF8C269E083F00659800 /* RingtonePlayerView.xib */; };
+		61C39E4E8ABF5643D9669676 /* Pods_RingtoneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344164AB6B8E3807A5540384 /* Pods_RingtoneApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D13A7D9269F3D0F00BD9922 /* RingtoneListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneListViewController.swift; sourceTree = "<group>"; };
+		0D13A7DA269F3D0F00BD9922 /* RingtoneListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RingtoneListViewController.xib; sourceTree = "<group>"; };
+		0D13A7DD269F3F0C00BD9922 /* Ringtone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ringtone.swift; sourceTree = "<group>"; };
+		0D13A7DF269F419C00BD9922 /* RingtoneListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneListViewModel.swift; sourceTree = "<group>"; };
+		0D13A7E2269F443500BD9922 /* RingtoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneTableViewCell.swift; sourceTree = "<group>"; };
+		0D13A7E3269F443500BD9922 /* RingtoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RingtoneTableViewCell.xib; sourceTree = "<group>"; };
 		0D145357269DA6F400458B46 /* RingtoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RingtoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D14535A269DA6F400458B46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D14535C269DA6F400458B46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0D14535E269DA6F400458B46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0D145361269DA6F400458B46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D145363269DA6F500458B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0D145366269DA6F500458B46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D145368269DA6F500458B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D6CA820269EEE1300ED02D2 /* RingtonePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtonePlayerView.swift; sourceTree = "<group>"; };
+		0D6CA822269EF11100ED02D2 /* VerticalButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalButton.xib; sourceTree = "<group>"; };
+		0D6CA824269EF15800ED02D2 /* VerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalButton.swift; sourceTree = "<group>"; };
+		0D6CA826269EF5AB00ED02D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		0D843F68269DBB9A00C6275E /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D843F69269DBB9A00C6275E /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D843F6A269DBB9A00C6275E /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DECFF74269DD61F00659800 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
+		0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenViewController.xib; sourceTree = "<group>"; };
+		0DECFF7A269DE9F700659800 /* SwipeUpForMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpForMoreViewController.swift; sourceTree = "<group>"; };
+		0DECFF7B269DE9F700659800 /* SwipeUpForMoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeUpForMoreViewController.xib; sourceTree = "<group>"; };
+		0DECFF7E269DEA5200659800 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		0DECFF82269DF6D300659800 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0DECFF84269DFCB500659800 /* AppRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingViewController.swift; sourceTree = "<group>"; };
+		0DECFF85269DFCB500659800 /* AppRatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppRatingViewController.xib; sourceTree = "<group>"; };
+		0DECFF8C269E083F00659800 /* RingtonePlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RingtonePlayerView.xib; sourceTree = "<group>"; };
+		18723D9EAD9FE905B91C4A47 /* Pods-RingtoneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingtoneApp.debug.xcconfig"; path = "Target Support Files/Pods-RingtoneApp/Pods-RingtoneApp.debug.xcconfig"; sourceTree = "<group>"; };
+		344164AB6B8E3807A5540384 /* Pods_RingtoneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RingtoneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A99A64EA5F655E819606F5 /* Pods-RingtoneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingtoneApp.release.xcconfig"; path = "Target Support Files/Pods-RingtoneApp/Pods-RingtoneApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +70,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C39E4E8ABF5643D9669676 /* Pods_RingtoneApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D13A7E1269F441500BD9922 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0D13A7E2269F443500BD9922 /* RingtoneTableViewCell.swift */,
+				0D13A7E3269F443500BD9922 /* RingtoneTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		0D14534E269DA6F400458B46 = {
 			isa = PBXGroup;
 			children = (
 				0D145359269DA6F400458B46 /* RingtoneApp */,
 				0D145358269DA6F400458B46 /* Products */,
+				371AE4C9B3C49EA9611A34A5 /* Pods */,
+				5192DEE7D4C9D1BD1A265A4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +107,130 @@
 		0D145359269DA6F400458B46 /* RingtoneApp */ = {
 			isa = PBXGroup;
 			children = (
-				0D14535A269DA6F400458B46 /* AppDelegate.swift */,
-				0D14535C269DA6F400458B46 /* SceneDelegate.swift */,
-				0D14535E269DA6F400458B46 /* ViewController.swift */,
-				0D145360269DA6F400458B46 /* Main.storyboard */,
-				0D145363269DA6F500458B46 /* Assets.xcassets */,
-				0D145365269DA6F500458B46 /* LaunchScreen.storyboard */,
-				0D145368269DA6F500458B46 /* Info.plist */,
+				0D14536E269DA77400458B46 /* App */,
+				0D145372269DA79500458B46 /* Model */,
+				0D145370269DA78900458B46 /* View */,
+				0D145371269DA78F00458B46 /* ViewModel */,
+				0D145373269DA79D00458B46 /* Networking */,
+				0DECFF80269DF6A800659800 /* Extensions */,
+				0D14536F269DA77A00458B46 /* Assets */,
 			);
 			path = RingtoneApp;
+			sourceTree = "<group>";
+		};
+		0D14536E269DA77400458B46 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0D14535A269DA6F400458B46 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0D14536F269DA77A00458B46 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0DECFF73269DD60400659800 /* JSON */,
+				0D145363269DA6F500458B46 /* Assets.xcassets */,
+				0D145368269DA6F500458B46 /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0D145370269DA78900458B46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DECFF89269E064B00659800 /* ViewController */,
+				0DECFF88269E064400659800 /* View */,
+				0D13A7E1269F441500BD9922 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D145371269DA78F00458B46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D13A7DF269F419C00BD9922 /* RingtoneListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D145372269DA79500458B46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D13A7DD269F3F0C00BD9922 /* Ringtone.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D145373269DA79D00458B46 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0DECFF73269DD60400659800 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0DECFF74269DD61F00659800 /* call.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		0DECFF80269DF6A800659800 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0DECFF82269DF6D300659800 /* UIImage.swift */,
+				0D6CA826269EF5AB00ED02D2 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0DECFF88269E064400659800 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D6CA820269EEE1300ED02D2 /* RingtonePlayerView.swift */,
+				0DECFF8C269E083F00659800 /* RingtonePlayerView.xib */,
+				0D6CA824269EF15800ED02D2 /* VerticalButton.swift */,
+				0D6CA822269EF11100ED02D2 /* VerticalButton.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DECFF89269E064B00659800 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */,
+				0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */,
+				0DECFF7A269DE9F700659800 /* SwipeUpForMoreViewController.swift */,
+				0DECFF7B269DE9F700659800 /* SwipeUpForMoreViewController.xib */,
+				0DECFF7E269DEA5200659800 /* TabbarController.swift */,
+				0DECFF84269DFCB500659800 /* AppRatingViewController.swift */,
+				0DECFF85269DFCB500659800 /* AppRatingViewController.xib */,
+				0D13A7D9269F3D0F00BD9922 /* RingtoneListViewController.swift */,
+				0D13A7DA269F3D0F00BD9922 /* RingtoneListViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		371AE4C9B3C49EA9611A34A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18723D9EAD9FE905B91C4A47 /* Pods-RingtoneApp.debug.xcconfig */,
+				49A99A64EA5F655E819606F5 /* Pods-RingtoneApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5192DEE7D4C9D1BD1A265A4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D843F68269DBB9A00C6275E /* RxCocoa.framework */,
+				0D843F69269DBB9A00C6275E /* RxRelay.framework */,
+				0D843F6A269DBB9A00C6275E /* RxSwift.framework */,
+				344164AB6B8E3807A5540384 /* Pods_RingtoneApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D14536B269DA6F500458B46 /* Build configuration list for PBXNativeTarget "RingtoneApp" */;
 			buildPhases = (
+				4F07268ADD61EB5EF5FD3F7A /* [CP] Check Pods Manifest.lock */,
 				0D145353269DA6F400458B46 /* Sources */,
 				0D145354269DA6F400458B46 /* Frameworks */,
 				0D145355269DA6F400458B46 /* Resources */,
+				DA40320BF27BD45F79C2944D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,45 +293,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D145367269DA6F500458B46 /* LaunchScreen.storyboard in Resources */,
+				0D13A7DC269F3D0F00BD9922 /* RingtoneListViewController.xib in Resources */,
+				0DECFF75269DD61F00659800 /* call.json in Resources */,
+				0DECFF87269DFCB500659800 /* AppRatingViewController.xib in Resources */,
 				0D145364269DA6F500458B46 /* Assets.xcassets in Resources */,
-				0D145362269DA6F400458B46 /* Main.storyboard in Resources */,
+				0D13A7E5269F443500BD9922 /* RingtoneTableViewCell.xib in Resources */,
+				0DECFF7D269DE9F700659800 /* SwipeUpForMoreViewController.xib in Resources */,
+				0D6CA823269EF11100ED02D2 /* VerticalButton.xib in Resources */,
+				0DECFF79269DD64C00659800 /* LaunchScreenViewController.xib in Resources */,
+				0DECFF8D269E083F00659800 /* RingtonePlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F07268ADD61EB5EF5FD3F7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RingtoneApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA40320BF27BD45F79C2944D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RingtoneApp/Pods-RingtoneApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RingtoneApp/Pods-RingtoneApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RingtoneApp/Pods-RingtoneApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0D145353269DA6F400458B46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D14535F269DA6F400458B46 /* ViewController.swift in Sources */,
+				0D13A7E0269F419C00BD9922 /* RingtoneListViewModel.swift in Sources */,
+				0D13A7DB269F3D0F00BD9922 /* RingtoneListViewController.swift in Sources */,
+				0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */,
+				0DECFF86269DFCB500659800 /* AppRatingViewController.swift in Sources */,
+				0D13A7DE269F3F0C00BD9922 /* Ringtone.swift in Sources */,
+				0DECFF83269DF6D300659800 /* UIImage.swift in Sources */,
+				0DECFF7C269DE9F700659800 /* SwipeUpForMoreViewController.swift in Sources */,
+				0DECFF7F269DEA5200659800 /* TabbarController.swift in Sources */,
+				0D6CA825269EF15800ED02D2 /* VerticalButton.swift in Sources */,
 				0D14535B269DA6F400458B46 /* AppDelegate.swift in Sources */,
-				0D14535D269DA6F400458B46 /* SceneDelegate.swift in Sources */,
+				0D13A7E4269F443500BD9922 /* RingtoneTableViewCell.swift in Sources */,
+				0D6CA827269EF5AB00ED02D2 /* UIView.swift in Sources */,
+				0D6CA821269EEE1300ED02D2 /* RingtonePlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		0D145360269DA6F400458B46 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D145361269DA6F400458B46 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0D145365269DA6F500458B46 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D145366269DA6F500458B46 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0D145369269DA6F500458B46 /* Debug */ = {
@@ -284,18 +491,23 @@
 		};
 		0D14536C269DA6F500458B46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18723D9EAD9FE905B91C4A47 /* Pods-RingtoneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RingtoneApp/Info.plist;
+				INFOPLIST_FILE = RingtoneApp/Assets/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = RingtoneApp;
+				INFOPLIST_KEY_CFBundleName = RingtoneApp;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,18 +523,23 @@
 		};
 		0D14536D269DA6F500458B46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49A99A64EA5F655E819606F5 /* Pods-RingtoneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RingtoneApp/Info.plist;
+				INFOPLIST_FILE = RingtoneApp/Assets/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = RingtoneApp;
+				INFOPLIST_KEY_CFBundleName = RingtoneApp;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

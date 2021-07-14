@@ -14,6 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if window == nil {
+            window = UIWindow(frame: UIScreen.main.bounds)
+        }
+        let rootViewcontroller = LaunchScreenViewController(animationCompletionBlock: { [unowned window] _ in
+            let rootViewController = TabbarController()
+            window?.rootViewController = rootViewController
+            window?.makeKeyAndVisible()
+        })
+        window?.rootViewController = rootViewcontroller
+        window?.makeKeyAndVisible()
         return true
     }
 }
