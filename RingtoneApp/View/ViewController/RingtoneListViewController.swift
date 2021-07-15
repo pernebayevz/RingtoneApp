@@ -24,24 +24,32 @@ class RingtoneListViewController: UIViewController {
     private func setupView() {
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.register(UINib(nibName: RingtoneTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: RingtoneTableViewCell.nibName)
-        tableView.rx.didEndScrollingAnimation.subscribe { _ in
-            print("tableView didEndScrollingAnimation")
-        }.disposed(by: disposeBag)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        tableView.rx.willDisplayCell.subscribe(onNext: {[unowned tableView] event in
+            guard let tableView = tableView, let cell = event.cell as? RingtoneTableViewCell else { return }
+            guard !tableView.isDragging && !tableView.isDecelerating else { return }
+            cell.play()
+        }).disposed(by: disposeBag)
+        tableView.rx.didEndDisplayingCell.subscribe(onNext: { event in
+            guard let cell = event.cell as? RingtoneTableViewCell else { return }
+            cell.pause()
+        }).disposed(by: disposeBag)
+        tableView.rx.didEndDecelerating.subscribe(onNext: {[unowned tableView] in
+            guard let tableView = tableView, let cell = tableView.visibleCells.first as? RingtoneTableViewCell else {
+                return
+            }
+            cell.play()
+        }).disposed(by: disposeBag)
         
         viewModel.ringtones.bind(to: tableView.rx.items(cellIdentifier: RingtoneTableViewCell.nibName, cellType: RingtoneTableViewCell.self)) { (row,item,cell) in
-                    
+            cell.setupContent(with: item)
         }.disposed(by: disposeBag)
         viewModel.fetchRingtones()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        viewModel.fetchRingtones()
-//        print("view bounds: \(view.bounds)")
-//        print("view.safeAreaInsets: \(view.safeAreaInsets)")
-//        print("view.safeAreaLayoutGuide.layoutFrame: \(view.safeAreaLayoutGuide.layoutFrame)")
-//        print("view.safeAreaLayoutGuide.topAnchor: \(view.safeAreaLayoutGuide.topAnchor)")
-//        print("view.safeAreaLayoutGuide.bottomAnchor: \(view.safeAreaLayoutGuide.bottomAnchor)")
+        super.viewDidAppear(animated)
+        viewModel.fetchRingtones()
     }
 }
 

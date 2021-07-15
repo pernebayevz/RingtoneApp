@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RingtoneListViewController" customModule="RingtoneApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="RingtoneApp" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="2jf-NZ-Vts" id="HLY-vh-peY"/>
+                <outlet property="playerView" destination="H0U-Rp-nfe" id="iOi-94-afk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2jf-NZ-Vts">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0U-Rp-nfe" customClass="PlayerView" customModule="RingtoneApp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="2jf-NZ-Vts" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="axv-8X-gg0"/>
-                <constraint firstItem="2jf-NZ-Vts" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bbx-vG-pzd"/>
-                <constraint firstItem="2jf-NZ-Vts" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ge0-kT-xrm"/>
-                <constraint firstItem="2jf-NZ-Vts" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="oIv-Yv-zIX"/>
+                <constraint firstItem="H0U-Rp-nfe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7zC-Lh-Pqg"/>
+                <constraint firstItem="H0U-Rp-nfe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bI7-xt-yD6"/>
+                <constraint firstItem="H0U-Rp-nfe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="doX-4z-fz1"/>
+                <constraint firstItem="H0U-Rp-nfe" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="kg4-Te-B0v"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>

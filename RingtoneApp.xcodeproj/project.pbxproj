@@ -15,10 +15,13 @@
 		0D13A7E5269F443500BD9922 /* RingtoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D13A7E3269F443500BD9922 /* RingtoneTableViewCell.xib */; };
 		0D14535B269DA6F400458B46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14535A269DA6F400458B46 /* AppDelegate.swift */; };
 		0D145364269DA6F500458B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D145363269DA6F500458B46 /* Assets.xcassets */; };
+		0D1F75D026A068DF00818C21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F75CE26A068DF00818C21 /* HomeViewController.swift */; };
+		0D1F75D126A068DF00818C21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1F75CF26A068DF00818C21 /* HomeViewController.xib */; };
 		0D6CA821269EEE1300ED02D2 /* RingtonePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA820269EEE1300ED02D2 /* RingtonePlayerView.swift */; };
 		0D6CA823269EF11100ED02D2 /* VerticalButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CA822269EF11100ED02D2 /* VerticalButton.xib */; };
 		0D6CA825269EF15800ED02D2 /* VerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA824269EF15800ED02D2 /* VerticalButton.swift */; };
 		0D6CA827269EF5AB00ED02D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA826269EF5AB00ED02D2 /* UIView.swift */; };
+		0DAFF859269F59BA00AB1F63 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFF858269F59BA00AB1F63 /* PlayerView.swift */; };
 		0DECFF75269DD61F00659800 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF74269DD61F00659800 /* call.json */; };
 		0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */; };
 		0DECFF79269DD64C00659800 /* LaunchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */; };
@@ -43,6 +46,8 @@
 		0D14535A269DA6F400458B46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D145363269DA6F500458B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D145368269DA6F500458B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D1F75CE26A068DF00818C21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0D1F75CF26A068DF00818C21 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0D6CA820269EEE1300ED02D2 /* RingtonePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtonePlayerView.swift; sourceTree = "<group>"; };
 		0D6CA822269EF11100ED02D2 /* VerticalButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalButton.xib; sourceTree = "<group>"; };
 		0D6CA824269EF15800ED02D2 /* VerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalButton.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		0D843F68269DBB9A00C6275E /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D843F69269DBB9A00C6275E /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D843F6A269DBB9A00C6275E /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DAFF858269F59BA00AB1F63 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		0DECFF74269DD61F00659800 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
 		0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenViewController.xib; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 				0DECFF8C269E083F00659800 /* RingtonePlayerView.xib */,
 				0D6CA824269EF15800ED02D2 /* VerticalButton.swift */,
 				0D6CA822269EF11100ED02D2 /* VerticalButton.xib */,
+				0DAFF858269F59BA00AB1F63 /* PlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +216,8 @@
 				0DECFF85269DFCB500659800 /* AppRatingViewController.xib */,
 				0D13A7D9269F3D0F00BD9922 /* RingtoneListViewController.swift */,
 				0D13A7DA269F3D0F00BD9922 /* RingtoneListViewController.xib */,
+				0D1F75CE26A068DF00818C21 /* HomeViewController.swift */,
+				0D1F75CF26A068DF00818C21 /* HomeViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -300,6 +309,7 @@
 				0D13A7E5269F443500BD9922 /* RingtoneTableViewCell.xib in Resources */,
 				0DECFF7D269DE9F700659800 /* SwipeUpForMoreViewController.xib in Resources */,
 				0D6CA823269EF11100ED02D2 /* VerticalButton.xib in Resources */,
+				0D1F75D126A068DF00818C21 /* HomeViewController.xib in Resources */,
 				0DECFF79269DD64C00659800 /* LaunchScreenViewController.xib in Resources */,
 				0DECFF8D269E083F00659800 /* RingtonePlayerView.xib in Resources */,
 			);
@@ -359,10 +369,12 @@
 				0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */,
 				0DECFF86269DFCB500659800 /* AppRatingViewController.swift in Sources */,
 				0D13A7DE269F3F0C00BD9922 /* Ringtone.swift in Sources */,
+				0D1F75D026A068DF00818C21 /* HomeViewController.swift in Sources */,
 				0DECFF83269DF6D300659800 /* UIImage.swift in Sources */,
 				0DECFF7C269DE9F700659800 /* SwipeUpForMoreViewController.swift in Sources */,
 				0DECFF7F269DEA5200659800 /* TabbarController.swift in Sources */,
 				0D6CA825269EF15800ED02D2 /* VerticalButton.swift in Sources */,
+				0DAFF859269F59BA00AB1F63 /* PlayerView.swift in Sources */,
 				0D14535B269DA6F400458B46 /* AppDelegate.swift in Sources */,
 				0D13A7E4269F443500BD9922 /* RingtoneTableViewCell.swift in Sources */,
 				0D6CA827269EF5AB00ED02D2 /* UIView.swift in Sources */,

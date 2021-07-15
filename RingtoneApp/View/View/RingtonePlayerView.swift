@@ -11,7 +11,7 @@ import SwiftUI
 @IBDesignable
 class RingtonePlayerView: UIView {
 
-    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var shareBtn: VerticalButton!
@@ -29,11 +29,27 @@ class RingtonePlayerView: UIView {
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         xibSetup()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+    }
+    
+    func prepareForReuse() {
+        playerView.prepareForReuse()
+    }
+    
+    func setupContent(with ringtone: RingtoneModel) {
+        playerView.setupContent(videoURL: ringtone.url, previewImageURL: ringtone.preview_url)
+    }
+    
+    func play() {
+        playerView.play()
+    }
+    
+    func pause() {
+        playerView.pause()
     }
 }

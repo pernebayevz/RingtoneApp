@@ -5,14 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RingtonePlayerView" customModule="RingtoneApp" customModuleProvider="target">
             <connections>
                 <outlet property="likeBtn" destination="NKq-Fx-5KA" id="5b4-1T-Erp"/>
-                <outlet property="playerView" destination="T07-Zj-KgF" id="5DE-7v-ekq"/>
+                <outlet property="playerView" destination="T07-Zj-KgF" id="krV-Zj-HA0"/>
                 <outlet property="saveBtn" destination="M5O-lK-KXb" id="wkS-r7-dgi"/>
                 <outlet property="shareBtn" destination="bWN-bA-ffQ" id="xtd-PN-Q59"/>
                 <outlet property="stopOrPlayBtn" destination="09h-qz-5aL" id="MVi-Uh-cLL"/>
@@ -25,12 +24,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T07-Zj-KgF">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T07-Zj-KgF" customClass="PlayerView" customModule="RingtoneApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-xX-xU1">
-                    <rect key="frame" x="32" y="102.66666666666669" width="350" height="66.333333333333314"/>
+                    <rect key="frame" x="32" y="101.33333333333334" width="350" height="66.333333333333343"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash Tunes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Y-yS-eiZ">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="36"/>
@@ -39,7 +38,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="boost your mood" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dE-HA-cbq">
-                            <rect key="frame" x="0.0" y="45.999999999999986" width="350" height="20.333333333333329"/>
+                            <rect key="frame" x="0.0" y="46.000000000000014" width="350" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -47,7 +46,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-NU-xbB">
-                    <rect key="frame" x="16" y="609.66666666666663" width="382" height="232.33333333333337"/>
+                    <rect key="frame" x="16" y="582" width="382" height="232.66666666666663"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ze1-Jn-VEW">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
@@ -82,10 +81,10 @@
                             <gestureRecognizers/>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AKj-eH-Ueu">
-                            <rect key="frame" x="0.0" y="91.000000000000014" width="382" height="141.33333333333337"/>
+                            <rect key="frame" x="0.0" y="90.999999999999986" width="382" height="141.66666666666663"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09h-qz-5aL" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="191" height="141.33333333333334"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="191" height="141.66666666666666"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="image">
@@ -98,7 +97,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5O-lK-KXb" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
-                                    <rect key="frame" x="191" y="0.0" width="191" height="141.33333333333334"/>
+                                    <rect key="frame" x="191" y="0.0" width="191" height="141.66666666666666"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="image">
@@ -115,19 +114,18 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="T07-Zj-KgF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9wc-Le-yat"/>
-                <constraint firstItem="zVu-xX-xU1" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.3" id="G1C-i0-Cuz"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="i7C-NU-xbB" secondAttribute="bottom" constant="20" id="NF5-BN-8ef"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="T07-Zj-KgF" secondAttribute="trailing" id="Pq7-uf-tvJ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zVu-xX-xU1" secondAttribute="trailing" constant="32" id="UWK-vk-WDU"/>
-                <constraint firstItem="T07-Zj-KgF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Y9A-hX-TeI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i7C-NU-xbB" secondAttribute="trailing" constant="16" id="aCO-nS-CZf"/>
-                <constraint firstItem="zVu-xX-xU1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="giD-VH-Eyf"/>
-                <constraint firstItem="i7C-NU-xbB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="wQy-kQ-Mzq"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="T07-Zj-KgF" secondAttribute="bottom" id="zel-LW-bHf"/>
+                <constraint firstItem="T07-Zj-KgF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9wc-Le-yat"/>
+                <constraint firstItem="zVu-xX-xU1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.3" id="G1C-i0-Cuz"/>
+                <constraint firstAttribute="bottom" secondItem="i7C-NU-xbB" secondAttribute="bottom" multiplier="1.1" id="Lnf-Ai-0qK"/>
+                <constraint firstAttribute="trailing" secondItem="T07-Zj-KgF" secondAttribute="trailing" id="Pq7-uf-tvJ"/>
+                <constraint firstAttribute="trailing" secondItem="zVu-xX-xU1" secondAttribute="trailing" constant="32" id="UWK-vk-WDU"/>
+                <constraint firstItem="T07-Zj-KgF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y9A-hX-TeI"/>
+                <constraint firstAttribute="trailing" secondItem="i7C-NU-xbB" secondAttribute="trailing" constant="16" id="aCO-nS-CZf"/>
+                <constraint firstItem="zVu-xX-xU1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="giD-VH-Eyf"/>
+                <constraint firstItem="i7C-NU-xbB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="wQy-kQ-Mzq"/>
+                <constraint firstAttribute="bottom" secondItem="T07-Zj-KgF" secondAttribute="bottom" id="zel-LW-bHf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="136.92307692307691" y="109.47867298578198"/>

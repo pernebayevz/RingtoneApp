@@ -12,10 +12,12 @@ class TabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .black
+        
         let tab1 = RingtoneListViewController()
         tab1.tabBarItem.image = UIImage(named: "call")
         
-        let tab2 = UIViewController()
+        let tab2 = HomeViewController()
         tab2.tabBarItem.image = UIImage(named: "home")
         
         let tab3 = UIViewController()
@@ -30,6 +32,8 @@ class TabbarController: UITabBarController {
         viewControllers = [tab1, tab2, tab3, tab4, tab5]
         
         tabBar.unselectedItemTintColor = UIColor.white.withAlphaComponent(0.8)
+        tabBar.backgroundColor = .black
+        tabBar.barTintColor = .black
         
         let tabbarBgImage = UIImage(named: "bg_tabbar")
         let bgImageView = UIImageView(image: tabbarBgImage)
@@ -37,6 +41,7 @@ class TabbarController: UITabBarController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 //        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
 //            let vc = SwipeUpForMoreViewController()
 //            vc.modalPresentationStyle = .overCurrentContext

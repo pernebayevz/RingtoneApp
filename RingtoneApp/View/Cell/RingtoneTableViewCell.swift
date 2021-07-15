@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RingtoneTableViewCell: UITableViewCell {
 
     static let nibName: String = String(describing: RingtoneTableViewCell.self)
+    @IBOutlet weak var ringtonePlayerView: RingtonePlayerView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +21,22 @@ class RingtoneTableViewCell: UITableViewCell {
 
     private func setupCell() {
         
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        ringtonePlayerView.prepareForReuse()
+    }
+    
+    func setupContent(with ringtone: RingtoneModel) {
+        ringtonePlayerView.setupContent(with: ringtone)
+    }
+    
+    func play() {
+        ringtonePlayerView.play()
+    }
+    
+    func pause() {
+        ringtonePlayerView.pause()
     }
 }

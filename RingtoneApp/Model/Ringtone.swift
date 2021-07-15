@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct Ringtone {
-    let id: Int
-    let title, subtitle, videoURL, shareLink: String
+struct RingtoneModel: Codable {
+    let preview_url, url: String
 }

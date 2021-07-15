@@ -10,17 +10,16 @@ import RxCocoa
 import RxSwift
 
 class RingtoneListViewModel {
-    let ringtones = PublishSubject<[Ringtone]>()
+    let ringtones = PublishSubject<[RingtoneModel]>()
     
     func fetchRingtones() {
         let ringtones = [
-            Ringtone(id: 1, title: "Salam", subtitle: "Ualeikum", videoURL: "", shareLink: ""),
-            Ringtone(id: 1, title: "Salam", subtitle: "Ualeikum", videoURL: "", shareLink: ""),
-            Ringtone(id: 1, title: "Salam", subtitle: "Ualeikum", videoURL: "", shareLink: ""),
-            Ringtone(id: 1, title: "Salam", subtitle: "Ualeikum", videoURL: "", shareLink: ""),
-            Ringtone(id: 1, title: "Salam", subtitle: "Ualeikum", videoURL: "", shareLink: ""),
-            Ringtone(id: 1, title: "Salam", subtitle: "Ualeikum", videoURL: "", shareLink: ""),
-            Ringtone(id: 1, title: "Salam", subtitle: "Ualeikum", videoURL: "", shareLink: ""),
+            RingtoneModel(preview_url: "http://206.189.192.180/call/37.jpg", url: "http://206.189.192.180/call/37.mp4"),
+            RingtoneModel(preview_url: "http://206.189.192.180/call/103.jpg", url: "http://206.189.192.180/call/103.mp4"),
+            RingtoneModel(preview_url: "http://206.189.192.180/call/155.jpg", url: "http://206.189.192.180/call/155.mp4"),
+            RingtoneModel(preview_url: "http://206.189.192.180/call/27.jpg", url: "http://206.189.192.180/call/27.mp4"),
+            RingtoneModel(preview_url: "http://206.189.192.180/call/74.jpg", url: "http://206.189.192.180/call/74.mp4"),
+            RingtoneModel(preview_url: "http://206.189.192.180/call/55.jpg", url: "http://206.189.192.180/call/55.mp4"),
         ]
         self.ringtones.onNext(ringtones)
     }
