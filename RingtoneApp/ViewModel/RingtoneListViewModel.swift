@@ -11,17 +11,19 @@ import RxSwift
 
 class RingtoneListViewModel {
     let ringtones = PublishSubject<[RingtoneModel]>()
+    let networkManager = NetworkManager()
+    let errorMessage = PublishSubject<String>()
     
     func fetchRingtones() {
-        let ringtones = [
-            RingtoneModel(preview_url: "http://206.189.192.180/call/37.jpg", url: "http://206.189.192.180/call/37.mp4"),
-            RingtoneModel(preview_url: "http://206.189.192.180/call/103.jpg", url: "http://206.189.192.180/call/103.mp4"),
-            RingtoneModel(preview_url: "http://206.189.192.180/call/155.jpg", url: "http://206.189.192.180/call/155.mp4"),
-            RingtoneModel(preview_url: "http://206.189.192.180/call/27.jpg", url: "http://206.189.192.180/call/27.mp4"),
-            RingtoneModel(preview_url: "http://206.189.192.180/call/74.jpg", url: "http://206.189.192.180/call/74.mp4"),
-            RingtoneModel(preview_url: "http://206.189.192.180/call/55.jpg", url: "http://206.189.192.180/call/55.mp4"),
-        ]
-        self.ringtones.onNext(ringtones)
+        networkManager.getCallList {[weak ringtonesObserver = ringtones, weak errorMessage] ringtones, error in
+            DispatchQueue.main.sync {[weak ringtonesObserver, ringtones, weak errorMessage] in
+                if let ringtones = ringtones {
+                    ringtonesObserver?.onNext(ringtones.shuffled())
+                }else if let error = error {
+                    errorMessage?.onNext(error)
+                }
+            }
+        }
     }
     
     func refetchRingtones() {

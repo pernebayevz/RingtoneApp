@@ -11,10 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RingtonePlayerView" customModule="RingtoneApp" customModuleProvider="target">
             <connections>
                 <outlet property="likeBtn" destination="NKq-Fx-5KA" id="5b4-1T-Erp"/>
+                <outlet property="pauseOrPlayBtn" destination="09h-qz-5aL" id="MVi-Uh-cLL"/>
                 <outlet property="playerView" destination="T07-Zj-KgF" id="krV-Zj-HA0"/>
                 <outlet property="saveBtn" destination="M5O-lK-KXb" id="wkS-r7-dgi"/>
                 <outlet property="shareBtn" destination="bWN-bA-ffQ" id="xtd-PN-Q59"/>
-                <outlet property="stopOrPlayBtn" destination="09h-qz-5aL" id="MVi-Uh-cLL"/>
                 <outlet property="subtitleLabel" destination="7dE-HA-cbq" id="OZG-En-gx6"/>
                 <outlet property="titleLabel" destination="J4Y-yS-eiZ" id="cPv-Ld-9BM"/>
             </connections>
@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-xX-xU1">
+                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-xX-xU1">
                     <rect key="frame" x="32" y="101.33333333333334" width="350" height="66.333333333333343"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash Tunes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Y-yS-eiZ">

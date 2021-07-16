@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoa
 import RxSwift
 
 @IBDesignable
@@ -34,6 +35,8 @@ class VerticalButton: UIView {
         }
     }
     
+    var tapEvent = PublishSubject<Void>()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -47,5 +50,21 @@ class VerticalButton: UIView {
     func setupView() {
         xibSetup()
         stackView.spacing = 0
+        
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHandler(_:))))
+        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHandler(_:))))
+    }
+    
+    @objc private func tapHandler(_ sender: UITapGestureRecognizer) {
+        tapEvent.onNext(())
+    }
+    
+    func set(title: String?, image: UIImage?) {
+        titleLabel.text = title
+        imageView.image = image
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return titleLabel.frame.contains(point) || imageView.frame.contains(point)
     }
 }

@@ -21,6 +21,27 @@
 		0D6CA823269EF11100ED02D2 /* VerticalButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CA822269EF11100ED02D2 /* VerticalButton.xib */; };
 		0D6CA825269EF15800ED02D2 /* VerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA824269EF15800ED02D2 /* VerticalButton.swift */; };
 		0D6CA827269EF5AB00ED02D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CA826269EF5AB00ED02D2 /* UIView.swift */; };
+		0DAA0AE326A0E0A9001D2C36 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AE226A0E0A9001D2C36 /* CacheManager.swift */; };
+		0DAA0AEB26A0EE5D001D2C36 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AEA26A0EE5D001D2C36 /* JSONParameterEncoder.swift */; };
+		0DAA0AED26A0EE85001D2C36 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AEC26A0EE85001D2C36 /* ParameterEncoding.swift */; };
+		0DAA0AF126A0EEAE001D2C36 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AF026A0EEAE001D2C36 /* URLParameterEncoder.swift */; };
+		0DAA0AF326A0EEE3001D2C36 /* RingtoneApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AF226A0EEE3001D2C36 /* RingtoneApi.swift */; };
+		0DAA0AF626A0F04F001D2C36 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AF526A0F04F001D2C36 /* NetworkManager.swift */; };
+		0DAA0AF826A0F279001D2C36 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AF726A0F279001D2C36 /* NetworkRouter.swift */; };
+		0DAA0AFA26A0F2B3001D2C36 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AF926A0F2B3001D2C36 /* EndPointType.swift */; };
+		0DAA0AFC26A0F2D4001D2C36 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AFB26A0F2D4001D2C36 /* HTTPMethod.swift */; };
+		0DAA0AFE26A0F2E7001D2C36 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AFD26A0F2E7001D2C36 /* HTTPTask.swift */; };
+		0DAA0B0026A0F300001D2C36 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0AFF26A0F300001D2C36 /* NetworkLogger.swift */; };
+		0DAA0B0426A0F581001D2C36 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0B0326A0F581001D2C36 /* Service.swift */; };
+		0DAA0B0726A19F56001D2C36 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0B0526A19F56001D2C36 /* SubscriptionViewController.swift */; };
+		0DAA0B0826A19F56001D2C36 /* SubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B0626A19F56001D2C36 /* SubscriptionViewController.xib */; };
+		0DAA0B0B26A1B345001D2C36 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0B0926A1B345001D2C36 /* OnBoardingViewController.swift */; };
+		0DAA0B0C26A1B345001D2C36 /* OnBoardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B0A26A1B345001D2C36 /* OnBoardingViewController.xib */; };
+		0DAA0B0F26A1B465001D2C36 /* TitleSubtitleActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA0B0D26A1B465001D2C36 /* TitleSubtitleActionViewController.swift */; };
+		0DAA0B1026A1B465001D2C36 /* TitleSubtitleActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B0E26A1B465001D2C36 /* TitleSubtitleActionViewController.xib */; };
+		0DAA0B1526A1BC00001D2C36 /* memorable.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B1226A1BBFF001D2C36 /* memorable.mp4 */; };
+		0DAA0B1626A1BC00001D2C36 /* bored.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B1326A1BBFF001D2C36 /* bored.mp4 */; };
+		0DAA0B1726A1BC00001D2C36 /* subscription.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B1426A1BC00001D2C36 /* subscription.mp4 */; };
 		0DAFF859269F59BA00AB1F63 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFF858269F59BA00AB1F63 /* PlayerView.swift */; };
 		0DECFF75269DD61F00659800 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF74269DD61F00659800 /* call.json */; };
 		0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */; };
@@ -55,6 +76,27 @@
 		0D843F68269DBB9A00C6275E /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D843F69269DBB9A00C6275E /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D843F6A269DBB9A00C6275E /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DAA0AE226A0E0A9001D2C36 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		0DAA0AEA26A0EE5D001D2C36 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		0DAA0AEC26A0EE85001D2C36 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		0DAA0AF026A0EEAE001D2C36 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		0DAA0AF226A0EEE3001D2C36 /* RingtoneApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneApi.swift; sourceTree = "<group>"; };
+		0DAA0AF526A0F04F001D2C36 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0DAA0AF726A0F279001D2C36 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		0DAA0AF926A0F2B3001D2C36 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		0DAA0AFB26A0F2D4001D2C36 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0DAA0AFD26A0F2E7001D2C36 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		0DAA0AFF26A0F300001D2C36 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		0DAA0B0326A0F581001D2C36 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		0DAA0B0526A19F56001D2C36 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		0DAA0B0626A19F56001D2C36 /* SubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionViewController.xib; sourceTree = "<group>"; };
+		0DAA0B0926A1B345001D2C36 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		0DAA0B0A26A1B345001D2C36 /* OnBoardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingViewController.xib; sourceTree = "<group>"; };
+		0DAA0B0D26A1B465001D2C36 /* TitleSubtitleActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleActionViewController.swift; sourceTree = "<group>"; };
+		0DAA0B0E26A1B465001D2C36 /* TitleSubtitleActionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleSubtitleActionViewController.xib; sourceTree = "<group>"; };
+		0DAA0B1226A1BBFF001D2C36 /* memorable.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = memorable.mp4; sourceTree = "<group>"; };
+		0DAA0B1326A1BBFF001D2C36 /* bored.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bored.mp4; sourceTree = "<group>"; };
+		0DAA0B1426A1BC00001D2C36 /* subscription.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = subscription.mp4; sourceTree = "<group>"; };
 		0DAFF858269F59BA00AB1F63 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		0DECFF74269DD61F00659800 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
 		0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +160,7 @@
 				0D145370269DA78900458B46 /* View */,
 				0D145371269DA78F00458B46 /* ViewModel */,
 				0D145373269DA79D00458B46 /* Networking */,
+				0DAA0AE126A0E08D001D2C36 /* Manager */,
 				0DECFF80269DF6A800659800 /* Extensions */,
 				0D14536F269DA77A00458B46 /* Assets */,
 			);
@@ -135,6 +178,7 @@
 		0D14536F269DA77A00458B46 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0DAA0B1126A1BBB2001D2C36 /* Video */,
 				0DECFF73269DD60400659800 /* JSON */,
 				0D145363269DA6F500458B46 /* Assets.xcassets */,
 				0D145368269DA6F500458B46 /* Info.plist */,
@@ -171,8 +215,69 @@
 		0D145373269DA79D00458B46 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				0DAA0AE726A0EE2C001D2C36 /* Encoding */,
+				0DAA0AE926A0EE3B001D2C36 /* Service */,
+				0DAA0AE826A0EE36001D2C36 /* Manager */,
+				0DAA0AE626A0EE24001D2C36 /* Endpoint */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		0DAA0AE126A0E08D001D2C36 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0DAA0AE226A0E0A9001D2C36 /* CacheManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0DAA0AE626A0EE24001D2C36 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				0DAA0AF226A0EEE3001D2C36 /* RingtoneApi.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		0DAA0AE726A0EE2C001D2C36 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				0DAA0AEC26A0EE85001D2C36 /* ParameterEncoding.swift */,
+				0DAA0AEA26A0EE5D001D2C36 /* JSONParameterEncoder.swift */,
+				0DAA0AF026A0EEAE001D2C36 /* URLParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		0DAA0AE826A0EE36001D2C36 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0DAA0AF526A0F04F001D2C36 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0DAA0AE926A0EE3B001D2C36 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0DAA0AF726A0F279001D2C36 /* NetworkRouter.swift */,
+				0DAA0AF926A0F2B3001D2C36 /* EndPointType.swift */,
+				0DAA0AFB26A0F2D4001D2C36 /* HTTPMethod.swift */,
+				0DAA0AFD26A0F2E7001D2C36 /* HTTPTask.swift */,
+				0DAA0AFF26A0F300001D2C36 /* NetworkLogger.swift */,
+				0DAA0B0326A0F581001D2C36 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0DAA0B1126A1BBB2001D2C36 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				0DAA0B1326A1BBFF001D2C36 /* bored.mp4 */,
+				0DAA0B1226A1BBFF001D2C36 /* memorable.mp4 */,
+				0DAA0B1426A1BC00001D2C36 /* subscription.mp4 */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		0DECFF73269DD60400659800 /* JSON */ = {
@@ -218,6 +323,12 @@
 				0D13A7DA269F3D0F00BD9922 /* RingtoneListViewController.xib */,
 				0D1F75CE26A068DF00818C21 /* HomeViewController.swift */,
 				0D1F75CF26A068DF00818C21 /* HomeViewController.xib */,
+				0DAA0B0526A19F56001D2C36 /* SubscriptionViewController.swift */,
+				0DAA0B0626A19F56001D2C36 /* SubscriptionViewController.xib */,
+				0DAA0B0D26A1B465001D2C36 /* TitleSubtitleActionViewController.swift */,
+				0DAA0B0E26A1B465001D2C36 /* TitleSubtitleActionViewController.xib */,
+				0DAA0B0926A1B345001D2C36 /* OnBoardingViewController.swift */,
+				0DAA0B0A26A1B345001D2C36 /* OnBoardingViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -305,12 +416,18 @@
 				0D13A7DC269F3D0F00BD9922 /* RingtoneListViewController.xib in Resources */,
 				0DECFF75269DD61F00659800 /* call.json in Resources */,
 				0DECFF87269DFCB500659800 /* AppRatingViewController.xib in Resources */,
+				0DAA0B0C26A1B345001D2C36 /* OnBoardingViewController.xib in Resources */,
 				0D145364269DA6F500458B46 /* Assets.xcassets in Resources */,
 				0D13A7E5269F443500BD9922 /* RingtoneTableViewCell.xib in Resources */,
+				0DAA0B1526A1BC00001D2C36 /* memorable.mp4 in Resources */,
 				0DECFF7D269DE9F700659800 /* SwipeUpForMoreViewController.xib in Resources */,
+				0DAA0B0826A19F56001D2C36 /* SubscriptionViewController.xib in Resources */,
 				0D6CA823269EF11100ED02D2 /* VerticalButton.xib in Resources */,
 				0D1F75D126A068DF00818C21 /* HomeViewController.xib in Resources */,
+				0DAA0B1726A1BC00001D2C36 /* subscription.mp4 in Resources */,
 				0DECFF79269DD64C00659800 /* LaunchScreenViewController.xib in Resources */,
+				0DAA0B1026A1B465001D2C36 /* TitleSubtitleActionViewController.xib in Resources */,
+				0DAA0B1626A1BC00001D2C36 /* bored.mp4 in Resources */,
 				0DECFF8D269E083F00659800 /* RingtonePlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,17 +484,32 @@
 				0D13A7E0269F419C00BD9922 /* RingtoneListViewModel.swift in Sources */,
 				0D13A7DB269F3D0F00BD9922 /* RingtoneListViewController.swift in Sources */,
 				0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */,
+				0DAA0AF626A0F04F001D2C36 /* NetworkManager.swift in Sources */,
 				0DECFF86269DFCB500659800 /* AppRatingViewController.swift in Sources */,
+				0DAA0B0426A0F581001D2C36 /* Service.swift in Sources */,
 				0D13A7DE269F3F0C00BD9922 /* Ringtone.swift in Sources */,
 				0D1F75D026A068DF00818C21 /* HomeViewController.swift in Sources */,
+				0DAA0AFC26A0F2D4001D2C36 /* HTTPMethod.swift in Sources */,
+				0DAA0B0B26A1B345001D2C36 /* OnBoardingViewController.swift in Sources */,
+				0DAA0AFA26A0F2B3001D2C36 /* EndPointType.swift in Sources */,
+				0DAA0B0F26A1B465001D2C36 /* TitleSubtitleActionViewController.swift in Sources */,
 				0DECFF83269DF6D300659800 /* UIImage.swift in Sources */,
+				0DAA0AF126A0EEAE001D2C36 /* URLParameterEncoder.swift in Sources */,
 				0DECFF7C269DE9F700659800 /* SwipeUpForMoreViewController.swift in Sources */,
 				0DECFF7F269DEA5200659800 /* TabbarController.swift in Sources */,
 				0D6CA825269EF15800ED02D2 /* VerticalButton.swift in Sources */,
+				0DAA0B0026A0F300001D2C36 /* NetworkLogger.swift in Sources */,
 				0DAFF859269F59BA00AB1F63 /* PlayerView.swift in Sources */,
 				0D14535B269DA6F400458B46 /* AppDelegate.swift in Sources */,
+				0DAA0AE326A0E0A9001D2C36 /* CacheManager.swift in Sources */,
+				0DAA0AFE26A0F2E7001D2C36 /* HTTPTask.swift in Sources */,
+				0DAA0AF826A0F279001D2C36 /* NetworkRouter.swift in Sources */,
+				0DAA0AED26A0EE85001D2C36 /* ParameterEncoding.swift in Sources */,
+				0DAA0AEB26A0EE5D001D2C36 /* JSONParameterEncoder.swift in Sources */,
+				0DAA0B0726A19F56001D2C36 /* SubscriptionViewController.swift in Sources */,
 				0D13A7E4269F443500BD9922 /* RingtoneTableViewCell.swift in Sources */,
 				0D6CA827269EF5AB00ED02D2 /* UIView.swift in Sources */,
+				0DAA0AF326A0EEE3001D2C36 /* RingtoneApi.swift in Sources */,
 				0D6CA821269EEE1300ED02D2 /* RingtonePlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

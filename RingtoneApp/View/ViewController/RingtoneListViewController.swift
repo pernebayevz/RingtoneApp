@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import NotificationBannerSwift
 
 class RingtoneListViewController: UIViewController {
 
@@ -43,6 +44,10 @@ class RingtoneListViewController: UIViewController {
         
         viewModel.ringtones.bind(to: tableView.rx.items(cellIdentifier: RingtoneTableViewCell.nibName, cellType: RingtoneTableViewCell.self)) { (row,item,cell) in
             cell.setupContent(with: item)
+            cell.ringtonePlayerView.delegate = self
+        }.disposed(by: disposeBag)
+        viewModel.errorMessage.subscribe {[unowned self] errorMessage in
+            self.show(errorMessage: errorMessage)
         }.disposed(by: disposeBag)
         viewModel.fetchRingtones()
     }
@@ -50,6 +55,11 @@ class RingtoneListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.fetchRingtones()
+    }
+    
+    private func show(errorMessage: String) {
+        let banner = NotificationBanner(title: "Couldn't fetch ringtones", subtitle: errorMessage, style: .danger)
+        banner.show()
     }
 }
 
@@ -60,5 +70,17 @@ extension RingtoneListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
+    }
+}
+
+extension RingtoneListViewController: RingtonePlayerViewDelegate {
+    func share(ringtone: RingtoneModel?) {
+        guard let ringtone = ringtone, let url = URL(string: ringtone.url) else {
+            return
+        }
+        
+        let items: [Any] = ["Check out this cool ringtone", url]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
 }

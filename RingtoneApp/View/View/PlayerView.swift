@@ -11,6 +11,11 @@ import Kingfisher
 import RxCocoa
 import RxSwift
 
+protocol PlayerViewDelegate: AnyObject {
+    func didPause()
+    func didPlay()
+}
+
 class PlayerView: UIView {
     
     //MARK: Subviews
@@ -46,6 +51,8 @@ class PlayerView: UIView {
     }
     private var playerItemContext = 0
     
+    weak var delegate: PlayerViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -54,10 +61,6 @@ class PlayerView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
-    }
-    
-    deinit {
-        queuePlayer?.currentItem?.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), context: &playerItemContext)
     }
     
     private func setupView() {
@@ -84,23 +87,8 @@ class PlayerView: UIView {
         activityIndicatorView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
-    
-    
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
-        guard let player = queuePlayer else {
-            return
-        }
-        
-        switch player.timeControlStatus {
-        case .paused:
-            play()
-        case .playing:
-            pause()
-        case .waitingToPlayAtSpecifiedRate:
-            play()
-        @unknown default:
-            ()
-        }
+        pauseOrPlay()
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -146,26 +134,52 @@ extension PlayerView {
         queuePlayer = nil
     }
     
-    func setupContent(videoURL: String, previewImageURL: String) {
-        if let previewImageURL = URL(string: previewImageURL) {
+    func setupContent(videoURL: String, previewImageURL: String? = nil) {
+        setupContent(videoURL: URL(string: videoURL), previewImageURL: previewImageURL)
+    }
+    
+    func setupContent(videoURL: URL?, previewImageURL: String? = nil) {
+        if let urlString = previewImageURL, let previewImageURL = URL(string: urlString) {
             previewImageView.kf.setImage(with: previewImageURL)
         }
-        if let videoURL = URL(string: videoURL) {
+        if let videoURL = videoURL {
             let asset: AVAsset = AVAsset(url: videoURL)
             let playerItem : AVPlayerItem = AVPlayerItem(asset: asset)
             self.queuePlayer = AVQueuePlayer(playerItem: playerItem)
+//            self.queuePlayer?.automaticallyWaitsToMinimizeStalling = false
             self.playerLooper = AVPlayerLooper(player: self.queuePlayer!, templateItem: playerItem)
-            
+
             activityIndicatorView.startAnimating()
             playerItem.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.old, .new], context: &playerItemContext)
         }
     }
     
     func play() {
-        queuePlayer?.playImmediately(atRate: 1)
+        guard let player = queuePlayer else { return }
+        
+        player.playImmediately(atRate: 1)
+        delegate?.didPlay()
     }
     
     func pause() {
         queuePlayer?.pause()
+        delegate?.didPause()
+    }
+    
+    func pauseOrPlay() {
+        guard let player = queuePlayer else {
+            return
+        }
+        
+        switch player.timeControlStatus {
+        case .paused:
+            play()
+        case .playing:
+            pause()
+        case .waitingToPlayAtSpecifiedRate:
+            play()
+        @unknown default:
+            ()
+        }
     }
 }

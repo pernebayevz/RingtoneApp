@@ -18,8 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
         }
         let rootViewcontroller = LaunchScreenViewController(animationCompletionBlock: { [unowned window] _ in
-            let rootViewController = TabbarController()
-            window?.rootViewController = rootViewController
+            let onboardingVC = OnBoardingViewController()
+            onboardingVC.onExit = {[unowned window] in
+                let tabbarController = TabbarController()
+                window?.rootViewController = tabbarController
+                window?.makeKeyAndVisible()
+            }
+            window?.rootViewController = onboardingVC
             window?.makeKeyAndVisible()
         })
         window?.rootViewController = rootViewcontroller

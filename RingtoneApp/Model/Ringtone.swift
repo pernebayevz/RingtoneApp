@@ -10,3 +10,9 @@ import Foundation
 struct RingtoneModel: Codable {
     let preview_url, url: String
 }
+
+struct CallAPIResponse: Codable {
+    let id: Int
+    let nameCategory, urlPhoto: String
+    let array: [RingtoneModel]
+}
