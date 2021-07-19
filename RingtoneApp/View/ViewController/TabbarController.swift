@@ -12,6 +12,7 @@ class TabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.setHidesBackButton(true, animated: false)
         view.backgroundColor = .black
         
         let tab1 = RingtoneListViewController()

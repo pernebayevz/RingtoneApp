@@ -76,6 +76,7 @@
 		0D843F68269DBB9A00C6275E /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D843F69269DBB9A00C6275E /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D843F6A269DBB9A00C6275E /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D8520EB26A56B3F0078D332 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0DAA0AE226A0E0A9001D2C36 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		0DAA0AEA26A0EE5D001D2C36 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		0DAA0AEC26A0EE85001D2C36 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
@@ -223,6 +224,28 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		0D8520ED26A56C250078D332 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */,
+				0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		0D8520EE26A56C310078D332 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0DAA0B0926A1B345001D2C36 /* OnBoardingViewController.swift */,
+				0DAA0B0A26A1B345001D2C36 /* OnBoardingViewController.xib */,
+				0DAA0B0526A19F56001D2C36 /* SubscriptionViewController.swift */,
+				0DAA0B0626A19F56001D2C36 /* SubscriptionViewController.xib */,
+				0DAA0B0D26A1B465001D2C36 /* TitleSubtitleActionViewController.swift */,
+				0DAA0B0E26A1B465001D2C36 /* TitleSubtitleActionViewController.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		0DAA0AE126A0E08D001D2C36 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,8 +335,8 @@
 		0DECFF89269E064B00659800 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */,
-				0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */,
+				0D8520EE26A56C310078D332 /* Onboarding */,
+				0D8520ED26A56C250078D332 /* Launch */,
 				0DECFF7A269DE9F700659800 /* SwipeUpForMoreViewController.swift */,
 				0DECFF7B269DE9F700659800 /* SwipeUpForMoreViewController.xib */,
 				0DECFF7E269DEA5200659800 /* TabbarController.swift */,
@@ -323,12 +346,6 @@
 				0D13A7DA269F3D0F00BD9922 /* RingtoneListViewController.xib */,
 				0D1F75CE26A068DF00818C21 /* HomeViewController.swift */,
 				0D1F75CF26A068DF00818C21 /* HomeViewController.xib */,
-				0DAA0B0526A19F56001D2C36 /* SubscriptionViewController.swift */,
-				0DAA0B0626A19F56001D2C36 /* SubscriptionViewController.xib */,
-				0DAA0B0D26A1B465001D2C36 /* TitleSubtitleActionViewController.swift */,
-				0DAA0B0E26A1B465001D2C36 /* TitleSubtitleActionViewController.xib */,
-				0DAA0B0926A1B345001D2C36 /* OnBoardingViewController.swift */,
-				0DAA0B0A26A1B345001D2C36 /* OnBoardingViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -345,6 +362,7 @@
 		5192DEE7D4C9D1BD1A265A4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D8520EB26A56B3F0078D332 /* AVFoundation.framework */,
 				0D843F68269DBB9A00C6275E /* RxCocoa.framework */,
 				0D843F69269DBB9A00C6275E /* RxRelay.framework */,
 				0D843F6A269DBB9A00C6275E /* RxSwift.framework */,

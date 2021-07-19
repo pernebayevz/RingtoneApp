@@ -15,13 +15,14 @@ class SubscriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupContent()
+        setupView()
     }
     
-    private func setupContent() {
+    private func setupView() {
         guard let url = Bundle.main.url(forResource: "subscription", withExtension: "mp4") else {
             return
         }
+        
         playerView.setupContent(videoURL: url)
     }
     

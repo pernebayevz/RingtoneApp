@@ -24,13 +24,8 @@ class PlayerView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.backgroundColor = .clear
         return imageView
-    }()
-    private let activityIndicatorView: UIActivityIndicatorView = {
-        let aView = UIActivityIndicatorView(style: .whiteLarge)
-        aView.hidesWhenStopped = true
-        aView.translatesAutoresizingMaskIntoConstraints = false
-        return aView
     }()
     
     override class var layerClass: AnyClass {
@@ -49,7 +44,6 @@ class PlayerView: UIView {
             playerLayer.player = newValue
         }
     }
-    private var playerItemContext = 0
     
     weak var delegate: PlayerViewDelegate?
     
@@ -70,7 +64,6 @@ class PlayerView: UIView {
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler(_:))))
         addPreviewImageView()
-        addActivityIndicatorView()
     }
     
     private func addPreviewImageView() {
@@ -81,55 +74,48 @@ class PlayerView: UIView {
         previewImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
-    private func addActivityIndicatorView() {
-        insertSubview(activityIndicatorView, at: 1)
-        activityIndicatorView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        activityIndicatorView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-    }
-    
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
         pauseOrPlay()
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        // Only handle observations for the playerItemContext
-        guard context == &playerItemContext else {
-            super.observeValue(forKeyPath: keyPath,
-                               of: object,
-                               change: change,
-                               context: context)
-            return
-        }
-
-        if keyPath == #keyPath(AVPlayerItem.status) {
-            let status: AVPlayerItem.Status
-            if let statusNumber = change?[.newKey] as? NSNumber {
-                status = AVPlayerItem.Status(rawValue: statusNumber.intValue)!
-            } else {
-                status = .unknown
-            }
-
-            // Switch over status value
-            switch status {
-            case .readyToPlay:
-                // Player item is ready to play.
-                activityIndicatorView.stopAnimating()
-            case .failed:
-                // Player item failed. See error.
-                activityIndicatorView.stopAnimating()
-            case .unknown:
-                ()
-            @unknown default:
-                ()
-            }
-        }
-    }
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        // Only handle observations for the playerItemContext
+//        guard context == &playerItemContext else {
+//            super.observeValue(forKeyPath: keyPath,
+//                               of: object,
+//                               change: change,
+//                               context: context)
+//            return
+//        }
+//
+//        if keyPath == #keyPath(AVPlayerItem.status) {
+//            let status: AVPlayerItem.Status
+//            if let statusNumber = change?[.newKey] as? NSNumber {
+//                status = AVPlayerItem.Status(rawValue: statusNumber.intValue)!
+//            } else {
+//                status = .unknown
+//            }
+//
+//            // Switch over status value
+//            switch status {
+//            case .readyToPlay:
+//                // Player item is ready to play.
+//                stopAnimating()
+//            case .failed:
+//                // Player item failed. See error.
+//                stopAnimating()
+//            case .unknown:
+//                ()
+//            @unknown default:
+//                ()
+//            }
+//        }
+//    }
 }
 
 extension PlayerView {
     func prepareForReuse() {
         previewImageView.image = nil
-        activityIndicatorView.stopAnimating()
         playerLooper = nil
         queuePlayer = nil
     }
@@ -146,11 +132,7 @@ extension PlayerView {
             let asset: AVAsset = AVAsset(url: videoURL)
             let playerItem : AVPlayerItem = AVPlayerItem(asset: asset)
             self.queuePlayer = AVQueuePlayer(playerItem: playerItem)
-//            self.queuePlayer?.automaticallyWaitsToMinimizeStalling = false
             self.playerLooper = AVPlayerLooper(player: self.queuePlayer!, templateItem: playerItem)
-
-            activityIndicatorView.startAnimating()
-            playerItem.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.old, .new], context: &playerItemContext)
         }
     }
     

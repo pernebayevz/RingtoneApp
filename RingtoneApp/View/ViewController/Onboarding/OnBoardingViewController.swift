@@ -12,9 +12,9 @@ class OnBoardingViewController: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var contentView: UIView!
     
-    var pages: [UIViewController] = []
-    var currentPageIndex: Int = 0
-    var pageViewController: UIPageViewController!
+    private var pages: [UIViewController]!
+    private var currentPageIndex: Int = 0
+    private var pageViewController: UIPageViewController!
     
     var onExit: (()->())?
     
@@ -24,6 +24,7 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.setHidesBackButton(true, animated: false)
         setupPageViewController()
     }
     
@@ -31,16 +32,15 @@ class OnBoardingViewController: UIViewController {
         let boredURL = Bundle.main.url(forResource: "bored", withExtension: "mp4")
         let vc1 = TitleSubtitleActionViewController(title: "Bored of the same ringtone every time?", subtitle: "Express yourself, even through incoming calls", videoURL: boredURL)
         vc1.delegate = self
-        pages.append(vc1)
         
         let memorable = Bundle.main.url(forResource: "memorable", withExtension: "mp4")
         let vc2 = TitleSubtitleActionViewController(title: "Make an ordinary call memorable", subtitle: "Choose from numerous ringtones and personalize your call experience", videoURL: memorable)
         vc2.delegate = self
-        pages.append(vc2)
         
         let vc3 = SubscriptionViewController()
         vc3.delegate = self
-        pages.append(vc3)
+        
+        pages = [vc1, vc2, vc3]
     }
     
     private func setupPageViewController() {
@@ -72,8 +72,11 @@ extension OnBoardingViewController: OnBoardingDelegate {
     func continueOnBoarding() {
         if currentPageIndex < pages.count - 1 {
             currentPageIndex += 1
-            pageViewController.setViewControllers([pages[currentPageIndex]], direction: .forward, animated: true, completion: nil)
+            pageViewController.setViewControllers([pages[currentPageIndex]], direction: .forward, animated: false, completion: nil)
+        }else{
+            
         }
+        
         if currentPageIndex == 2 {
             closeBtn.isHidden = false
         }

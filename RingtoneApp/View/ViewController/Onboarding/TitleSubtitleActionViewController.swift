@@ -37,14 +37,17 @@ class TitleSubtitleActionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         titleLabel.text = titleLabelText
         subtitleLabel.text = subTitleLabelText
+        
         playerView.setupContent(videoURL: videoURL)
+        playerView.play()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        playerView.play()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
