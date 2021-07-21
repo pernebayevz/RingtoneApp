@@ -42,7 +42,7 @@ class RingtoneListViewController: UIViewController {
             cell.play()
         }).disposed(by: disposeBag)
         
-        viewModel.ringtones.bind(to: tableView.rx.items(cellIdentifier: RingtoneTableViewCell.nibName, cellType: RingtoneTableViewCell.self)) { (row,item,cell) in
+        viewModel.cellRingtones.bind(to: tableView.rx.items(cellIdentifier: RingtoneTableViewCell.nibName, cellType: RingtoneTableViewCell.self)) { (row,item,cell) in
             cell.setupContent(with: item)
             cell.ringtonePlayerView.delegate = self
         }.disposed(by: disposeBag)
@@ -83,8 +83,8 @@ extension RingtoneListViewController: UITableViewDelegate {
 }
 
 extension RingtoneListViewController: RingtonePlayerViewDelegate {
-    func share(ringtone: RingtoneModel?) {
-        guard let ringtone = ringtone, let url = URL(string: ringtone.url) else {
+    func share(ringtone: RingtoneCellModel?) {
+        guard let ringtone = ringtone, let url = URL(string: ringtone.ringtoneModel.url) else {
             return
         }
         

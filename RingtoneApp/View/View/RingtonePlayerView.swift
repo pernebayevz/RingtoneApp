@@ -9,15 +9,16 @@ import UIKit
 import SwiftUI
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 protocol RingtonePlayerViewDelegate: AnyObject {
-    func share(ringtone: RingtoneModel?)
+    func share(ringtone: RingtoneCellModel?)
 }
 
 @IBDesignable
 class RingtonePlayerView: UIView {
 
-    @IBOutlet weak var playerView: PlayerView!
+    @IBOutlet weak var playerView: VideoPlayerView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var shareBtn: VerticalButton!
@@ -26,7 +27,7 @@ class RingtonePlayerView: UIView {
     @IBOutlet weak var saveBtn: VerticalButton!
     
     private let disposeBag = DisposeBag()
-    private var ringTone: RingtoneModel?
+    private var ringTone: RingtoneCellModel?
     weak var delegate: RingtonePlayerViewDelegate?
     
     override init(frame: CGRect) {
@@ -55,7 +56,7 @@ class RingtonePlayerView: UIView {
         }).disposed(by: disposeBag)
         pauseOrPlayBtn.tapEvent.subscribe(onNext: {[unowned playerView] in
             print("pauseOrPlayBtn tapped")
-            playerView?.pauseOrPlay()
+            playerView?.playOrPauseVideoImmediately()
         }).disposed(by: disposeBag)
         saveBtn.tapEvent.subscribe(onNext: {
             print("saveBtn tapped")
@@ -70,21 +71,24 @@ class RingtonePlayerView: UIView {
         playerView.prepareForReuse()
     }
     
-    func setupContent(with ringtone: RingtoneModel) {
+    func setupContent(with ringtone: RingtoneCellModel) {
         self.ringTone = ringtone
-        playerView.setupContent(videoURL: RingtoneApi.callList.environmentBaseURL + ringtone.url, previewImageURL: RingtoneApi.callList.environmentBaseURL + ringtone.preview_url)
+        
+        let item = AVPlayerItem(asset: ringtone.asset)
+        playerView.player = AVQueuePlayer(playerItem: item)
+        ringtone.playerLooper = AVPlayerLooper(player: playerView.player!, templateItem: item)
     }
     
     func play() {
-        playerView.play()
+        playerView.playVideoImmediately()
     }
     
     func pause() {
-        playerView.pause()
+        playerView.pauseVideo()
     }
 }
 
-extension RingtonePlayerView: PlayerViewDelegate {
+extension RingtonePlayerView: VideoPlayerViewDelegate {
     func didPlay() {
         pauseOrPlayBtn.set(title: "Stop", image: UIImage(named: "stop"))
     }

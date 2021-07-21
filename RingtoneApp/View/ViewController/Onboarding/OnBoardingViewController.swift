@@ -27,28 +27,27 @@ class OnBoardingViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let disposeBag = DisposeBag()
-    
     var onExit: (()->())?
-    
-    let items: [AVPlayerItem] = {
+    let playerItems: [AVPlayerItem] = {
         var items: [AVPlayerItem] = []
         if let url = Bundle.main.url(forResource: "bored", withExtension: "mp4") {
-            items.append(AVPlayerItem(url: url))
+            items.append(AVPlayerItem(asset: AVAsset(url: url)))
         }
         if let url = Bundle.main.url(forResource: "memorable", withExtension: "mp4") {
-            items.append(AVPlayerItem(url: url))
+            items.append(AVPlayerItem(asset: AVAsset(url: url)))
         }
         if let url = Bundle.main.url(forResource: "subscription", withExtension: "mp4") {
-            items.append(AVPlayerItem(url: url))
+            items.append(AVPlayerItem(asset: AVAsset(url: url)))
         }
         return items
     }()
-    let item: AVPlayerItem? = {
+    let playerItem: AVPlayerItem? = {
         if let url = Bundle.main.url(forResource: "onboarding", withExtension: "mp4") {
             return AVPlayerItem(url: url)
         }
         return nil
     }()
+    var playerLooper: AVPlayerLooper?
     
     deinit {
         onExit = nil
@@ -57,7 +56,7 @@ class OnBoardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        videoPlayerView.playerItem = item
+        videoPlayerView.player = AVQueuePlayer(items: playerItems)
     }
     
     private func setupView() {
@@ -70,24 +69,23 @@ class OnBoardingViewController: UIViewController {
     }
     
     private func playCurrentItem() {
-        guard let indexPath = collectionView.indexPathsForVisibleItems.first else {
-            playVideo(at: 0)
-            return
-        }
-        playVideo(at: indexPath.item)
+        let indexPath = collectionView.indexPathsForVisibleItems.first
+        let currentIndex: Int = indexPath?.item ?? 0
+        playItem(at: currentIndex)
     }
     
-    private func playVideo(at index: Int) {
-        switch index {
-        case 0:
-            videoPlayerView.play(startTime: CMTime(seconds: 0, preferredTimescale: 60000), endTime: CMTime(seconds: 10, preferredTimescale: 60000))
-        case 1:
-            videoPlayerView.play(startTime: CMTime(seconds: 10, preferredTimescale: 60000), endTime: CMTime(seconds: 20, preferredTimescale: 60000))
-        case 2:
-            videoPlayerView.play(startTime: CMTime(seconds: 20, preferredTimescale: 60000), endTime: CMTime(seconds: 30, preferredTimescale: 60000))
-        default:
-            ()
+    private func playItem(at index: Int) {
+        playerLooper?.disableLooping()
+        if index > 0 {
+            if let playerItem = videoPlayerView.currentPlayerItem {
+                videoPlayerView.remove(playerItem: playerItem)
+            }
+            videoPlayerView.advanceToNextPlayerItem()
         }
+        if let playerItem = videoPlayerView.currentPlayerItem {
+            playerLooper = AVPlayerLooper(player: videoPlayerView.player!, templateItem: playerItem)
+        }
+        videoPlayerView.playVideoImmediately()
     }
     
     private func pauseCurrentItem() {
@@ -163,27 +161,11 @@ extension OnBoardingViewController: OnBoardingDelegate {
         
         if indexPath.item < collectionView.numberOfItems(inSection: indexPath.section) - 1 {
             let nextItem: Int = indexPath.item + 1
-            playVideo(at: nextItem)
+            playItem(at: nextItem)
             
             let nextIndexPath = IndexPath(item: nextItem, section: indexPath.section)
             collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: false)
             collectionView.layoutIfNeeded()
         }
-    }
-}
-
-extension OnBoardingViewController {
-    func playCurrentVideo() {
-        /*
-         let items
-         let index
-         let item
-         player.currentItem.
-         player.play(item) //loop
-         */
-    }
-    
-    func playNextVideo() {
-        
     }
 }

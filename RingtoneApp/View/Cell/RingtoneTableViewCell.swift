@@ -28,7 +28,7 @@ class RingtoneTableViewCell: UITableViewCell {
         ringtonePlayerView.prepareForReuse()
     }
     
-    func setupContent(with ringtone: RingtoneModel) {
+    func setupContent(with ringtone: RingtoneCellModel) {
         ringtonePlayerView.setupContent(with: ringtone)
     }
     
