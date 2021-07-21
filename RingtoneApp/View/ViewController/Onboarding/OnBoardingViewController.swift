@@ -6,15 +6,26 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+
+protocol OnBoardingDelegate: AnyObject {
+    func continueOnBoarding(indexPath: IndexPath?)
+}
+
+protocol OnBoardingCellProtocol {
+    var indexPath: IndexPath? { get set }
+    var delegate: OnBoardingDelegate? { get set }
+}
 
 class OnBoardingViewController: UIViewController {
 
+    @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    private var pages: [UIViewController]!
-    private var currentPageIndex: Int = 0
-    private var pageViewController: UIPageViewController!
+    private let disposeBag = DisposeBag()
     
     var onExit: (()->())?
     
@@ -24,89 +35,85 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.setHidesBackButton(true, animated: false)
-        setupPageViewController()
+        setupView()
     }
     
-    private func setupPages() {
-        let boredURL = Bundle.main.url(forResource: "bored", withExtension: "mp4")
-        let vc1 = TitleSubtitleActionViewController(title: "Bored of the same ringtone every time?", subtitle: "Express yourself, even through incoming calls", videoURL: boredURL)
-        vc1.delegate = self
-        
-        let memorable = Bundle.main.url(forResource: "memorable", withExtension: "mp4")
-        let vc2 = TitleSubtitleActionViewController(title: "Make an ordinary call memorable", subtitle: "Choose from numerous ringtones and personalize your call experience", videoURL: memorable)
-        vc2.delegate = self
-        
-        let vc3 = SubscriptionViewController()
-        vc3.delegate = self
-        
-        pages = [vc1, vc2, vc3]
+    private func setupView() {
+        collectionView.contentInsetAdjustmentBehavior = .never
+        collectionView.register(UINib(nibName: Onboarding1CollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: Onboarding1CollectionViewCell.nibName)
+        collectionView.register(UINib(nibName: Onboarding2CollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: Onboarding2CollectionViewCell.nibName)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.reloadData()
     }
     
-    private func setupPageViewController() {
-        pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        contentView.addSubview(pageViewController.view)
-        addChild(pageViewController)
-        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        // constrain it to all 4 sides
-        NSLayoutConstraint.activate([
-            pageViewController.view.topAnchor.constraint(equalTo: contentView.topAnchor),
-            pageViewController.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            pageViewController.view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            pageViewController.view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        ])
-        pageViewController.didMove(toParent: self)
-        
-//        pageViewController.dataSource = self
-        
-        setupPages()
-        pageViewController.setViewControllers([pages[0]], direction: .forward, animated: false, completion: nil)
     }
     
     @IBAction func closeBtnTapHandler(_ sender: UIButton) {
         onExit?()
     }
 }
-extension OnBoardingViewController: OnBoardingDelegate {
-    func continueOnBoarding() {
-        if currentPageIndex < pages.count - 1 {
-            currentPageIndex += 1
-            pageViewController.setViewControllers([pages[currentPageIndex]], direction: .forward, animated: false, completion: nil)
-        }else{
-            
-        }
-        
-        if currentPageIndex == 2 {
-            closeBtn.isHidden = false
+
+extension OnBoardingViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("cellForItemAt: \(indexPath.item)")
+        switch indexPath.item {
+        case 0, 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Onboarding1CollectionViewCell.nibName, for: indexPath) as! Onboarding1CollectionViewCell
+            if indexPath.item == 0 {
+                let boredURL = Bundle.main.url(forResource: "bored", withExtension: "mp4")
+                cell.setupContent(title: "Bored of the same ringtone every time?", subtitle: "Express yourself, even through incoming calls", indexPath: indexPath)
+            }else{
+                let memorableURL = Bundle.main.url(forResource: "memorable", withExtension: "mp4")
+                cell.setupContent(title: "Make an ordinary call memorable", subtitle: "Choose from numerous ringtones and personalize your call experience", indexPath: indexPath)
+            }
+            cell.delegate = self
+            return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Onboarding2CollectionViewCell.nibName, for: indexPath) as! Onboarding2CollectionViewCell
+            cell.indexPath = indexPath
+            cell.delegate = self
+            return cell
+        default:
+            let cell = UICollectionViewCell()
+            return cell
         }
     }
 }
-//
-//extension OnBoardingViewController: UIPageViewControllerDataSource {
-//    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-//        if let viewControllerIndex = self.pages.firstIndex(of: viewController) {
-//            if viewControllerIndex == 0 {
-//                // wrap to last page in array
-//                return self.pages.last
-//            } else {
-//                // go to previous page in array
-//                return self.pages[viewControllerIndex - 1]
-//            }
-//        }
-//        return nil
-//    }
-//
-//    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-//        if let viewControllerIndex = self.pages.firstIndex(of: viewController) {
-//            if viewControllerIndex < self.pages.count - 1 {
-//                // go to next page in array
-//                return self.pages[viewControllerIndex + 1]
-//            } else {
-//                // wrap to first page in array
-//                return self.pages.first
-//            }
-//        }
-//        return nil
-//    }
-//}
+
+
+extension OnBoardingViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
+            closeBtn.isHidden = false
+        }else{
+            closeBtn.isHidden = true
+        }
+    }
+}
+
+extension OnBoardingViewController: OnBoardingDelegate {
+    func continueOnBoarding(indexPath: IndexPath?) {
+        guard let indexPath = indexPath else { return }
+        
+        if indexPath.item < collectionView.numberOfItems(inSection: indexPath.section) - 1 {
+            let nextIndexPath = IndexPath(item: indexPath.item+1, section: indexPath.section)
+            collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: false)
+        }
+    }
+}

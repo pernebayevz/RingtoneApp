@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19129"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnBoardingViewController" customModule="RingtoneApp" customModuleProvider="target">
             <connections>
                 <outlet property="closeBtn" destination="CdX-8W-2BL" id="feY-tM-bBJ"/>
+                <outlet property="collectionView" destination="Xu7-84-wlB" id="qIC-aL-KyP"/>
                 <outlet property="contentView" destination="HP8-No-Ns8" id="Ee1-mB-CDV"/>
+                <outlet property="playerView" destination="dVJ-Rt-dDE" id="AXV-iP-wbq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +25,33 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-No-Ns8">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-Rt-dDE" customClass="PlayerView" customModule="RingtoneApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xu7-84-wlB">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZbB-SC-Cnq">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Xu7-84-wlB" secondAttribute="bottom" id="9iP-4m-Sdy"/>
+                        <constraint firstAttribute="trailing" secondItem="Xu7-84-wlB" secondAttribute="trailing" id="UQM-mf-Lj9"/>
+                        <constraint firstItem="dVJ-Rt-dDE" firstAttribute="top" secondItem="HP8-No-Ns8" secondAttribute="top" id="Yke-Dt-GI7"/>
+                        <constraint firstItem="Xu7-84-wlB" firstAttribute="top" secondItem="HP8-No-Ns8" secondAttribute="top" id="ikz-uB-Qgp"/>
+                        <constraint firstAttribute="trailing" secondItem="dVJ-Rt-dDE" secondAttribute="trailing" id="jIi-nx-HDP"/>
+                        <constraint firstItem="Xu7-84-wlB" firstAttribute="leading" secondItem="HP8-No-Ns8" secondAttribute="leading" id="jin-Er-Beh"/>
+                        <constraint firstAttribute="bottom" secondItem="dVJ-Rt-dDE" secondAttribute="bottom" id="oHj-dW-Oil"/>
+                        <constraint firstItem="dVJ-Rt-dDE" firstAttribute="leading" secondItem="HP8-No-Ns8" secondAttribute="leading" id="ol3-WQ-zve"/>
+                    </constraints>
                 </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdX-8W-2BL">
                     <rect key="frame" x="16" y="64" width="30" height="30"/>
@@ -40,15 +68,15 @@
                     </connections>
                 </button>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="Hjc-Ev-SKW"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HP8-No-Ns8" secondAttribute="bottom" id="0Np-Ih-2dJ"/>
                 <constraint firstItem="HP8-No-Ns8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="20d-UM-t3F"/>
-                <constraint firstItem="HP8-No-Ns8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GBJ-c5-bvt"/>
-                <constraint firstItem="HP8-No-Ns8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HIi-cx-5BM"/>
-                <constraint firstItem="CdX-8W-2BL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="XQd-2c-hol"/>
-                <constraint firstItem="CdX-8W-2BL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oOo-Tg-nOU"/>
+                <constraint firstItem="Hjc-Ev-SKW" firstAttribute="top" secondItem="CdX-8W-2BL" secondAttribute="top" constant="-20" id="BfU-3c-LII"/>
+                <constraint firstItem="HP8-No-Ns8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GBJ-c5-bvt"/>
+                <constraint firstItem="HP8-No-Ns8" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="HIi-cx-5BM"/>
+                <constraint firstItem="CdX-8W-2BL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="oOo-Tg-nOU"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>

@@ -18,7 +18,6 @@ protocol PlayerViewDelegate: AnyObject {
 
 class PlayerView: UIView {
     
-    //MARK: Subviews
     private let previewImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +57,8 @@ class PlayerView: UIView {
     }
     
     private func setupView() {
+        backgroundColor = .clear
+        
         playerLayer.videoGravity = .resizeAspectFill
         playerLayer.contentsGravity = .resizeAspectFill
         playerLayer.backgroundColor = UIColor.black.cgColor
@@ -132,6 +133,7 @@ extension PlayerView {
             let asset: AVAsset = AVAsset(url: videoURL)
             let playerItem : AVPlayerItem = AVPlayerItem(asset: asset)
             self.queuePlayer = AVQueuePlayer(playerItem: playerItem)
+            self.queuePlayer!.automaticallyWaitsToMinimizeStalling = false
             self.playerLooper = AVPlayerLooper(player: self.queuePlayer!, templateItem: playerItem)
         }
     }

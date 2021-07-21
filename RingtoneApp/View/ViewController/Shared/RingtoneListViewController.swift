@@ -49,12 +49,21 @@ class RingtoneListViewController: UIViewController {
         viewModel.errorMessage.subscribe {[unowned self] errorMessage in
             self.show(errorMessage: errorMessage)
         }.disposed(by: disposeBag)
-        viewModel.fetchRingtones()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.fetchRingtones()
+
+        let swipePopup = SwipeUpForMoreViewController()
+        swipePopup.show(in: self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if let cell = tableView.visibleCells.first as? RingtoneTableViewCell {
+            cell.pause()
+        }
     }
     
     private func show(errorMessage: String) {

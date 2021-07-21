@@ -30,8 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             rootVC.setViewControllers([onboardingVC], animated: false)
         }
         rootVC.viewControllers = [launchScreenVC]
-        
+
         window?.rootViewController = rootVC
+//        window?.rootViewController = TabbarController()
         window?.makeKeyAndVisible()
         return true
     }

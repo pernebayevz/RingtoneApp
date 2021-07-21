@@ -18,7 +18,7 @@ class TabbarController: UITabBarController {
         let tab1 = RingtoneListViewController()
         tab1.tabBarItem.image = UIImage(named: "call")
         
-        let tab2 = HomeViewController()
+        let tab2 = MainNavigationController(rootViewController: HomeViewController())
         tab2.tabBarItem.image = UIImage(named: "home")
         
         let tab3 = UIViewController()
@@ -27,10 +27,7 @@ class TabbarController: UITabBarController {
         let tab4 = UIViewController()
         tab4.tabBarItem.image = UIImage(named: "four_k")
         
-        let tab5 = UIViewController()
-        tab5.tabBarItem.image = UIImage(named: "battery_charge")
-        
-        viewControllers = [tab1, tab2, tab3, tab4, tab5]
+        viewControllers = [tab1, tab2, tab3, tab4]
         
         tabBar.unselectedItemTintColor = UIColor.white.withAlphaComponent(0.8)
         tabBar.backgroundColor = .black
