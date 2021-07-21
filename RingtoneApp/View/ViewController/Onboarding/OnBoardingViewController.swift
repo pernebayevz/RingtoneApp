@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import AVFoundation
 
 protocol OnBoardingDelegate: AnyObject {
     func continueOnBoarding(indexPath: IndexPath?)
@@ -20,7 +21,7 @@ protocol OnBoardingCellProtocol {
 
 class OnBoardingViewController: UIViewController {
 
-    @IBOutlet weak var playerView: PlayerView!
+    @IBOutlet weak var videoPlayerView: VideoPlayerView!
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -29,6 +30,26 @@ class OnBoardingViewController: UIViewController {
     
     var onExit: (()->())?
     
+    let items: [AVPlayerItem] = {
+        var items: [AVPlayerItem] = []
+        if let url = Bundle.main.url(forResource: "bored", withExtension: "mp4") {
+            items.append(AVPlayerItem(url: url))
+        }
+        if let url = Bundle.main.url(forResource: "memorable", withExtension: "mp4") {
+            items.append(AVPlayerItem(url: url))
+        }
+        if let url = Bundle.main.url(forResource: "subscription", withExtension: "mp4") {
+            items.append(AVPlayerItem(url: url))
+        }
+        return items
+    }()
+    let item: AVPlayerItem? = {
+        if let url = Bundle.main.url(forResource: "onboarding", withExtension: "mp4") {
+            return AVPlayerItem(url: url)
+        }
+        return nil
+    }()
+    
     deinit {
         onExit = nil
     }
@@ -36,6 +57,7 @@ class OnBoardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        videoPlayerView.playerItem = item
     }
     
     private func setupView() {
@@ -47,9 +69,39 @@ class OnBoardingViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    private func playCurrentItem() {
+        guard let indexPath = collectionView.indexPathsForVisibleItems.first else {
+            playVideo(at: 0)
+            return
+        }
+        playVideo(at: indexPath.item)
+    }
+    
+    private func playVideo(at index: Int) {
+        switch index {
+        case 0:
+            videoPlayerView.play(startTime: CMTime(seconds: 0, preferredTimescale: 60000), endTime: CMTime(seconds: 10, preferredTimescale: 60000))
+        case 1:
+            videoPlayerView.play(startTime: CMTime(seconds: 10, preferredTimescale: 60000), endTime: CMTime(seconds: 20, preferredTimescale: 60000))
+        case 2:
+            videoPlayerView.play(startTime: CMTime(seconds: 20, preferredTimescale: 60000), endTime: CMTime(seconds: 30, preferredTimescale: 60000))
+        default:
+            ()
+        }
+    }
+    
+    private func pauseCurrentItem() {
+        videoPlayerView.pauseVideo()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        playCurrentItem()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        pauseCurrentItem()
     }
     
     @IBAction func closeBtnTapHandler(_ sender: UIButton) {
@@ -67,15 +119,13 @@ extension OnBoardingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("cellForItemAt: \(indexPath.item)")
+        
         switch indexPath.item {
         case 0, 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Onboarding1CollectionViewCell.nibName, for: indexPath) as! Onboarding1CollectionViewCell
             if indexPath.item == 0 {
-                let boredURL = Bundle.main.url(forResource: "bored", withExtension: "mp4")
                 cell.setupContent(title: "Bored of the same ringtone every time?", subtitle: "Express yourself, even through incoming calls", indexPath: indexPath)
             }else{
-                let memorableURL = Bundle.main.url(forResource: "memorable", withExtension: "mp4")
                 cell.setupContent(title: "Make an ordinary call memorable", subtitle: "Choose from numerous ringtones and personalize your call experience", indexPath: indexPath)
             }
             cell.delegate = self
@@ -112,8 +162,28 @@ extension OnBoardingViewController: OnBoardingDelegate {
         guard let indexPath = indexPath else { return }
         
         if indexPath.item < collectionView.numberOfItems(inSection: indexPath.section) - 1 {
-            let nextIndexPath = IndexPath(item: indexPath.item+1, section: indexPath.section)
+            let nextItem: Int = indexPath.item + 1
+            playVideo(at: nextItem)
+            
+            let nextIndexPath = IndexPath(item: nextItem, section: indexPath.section)
             collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: false)
+            collectionView.layoutIfNeeded()
         }
+    }
+}
+
+extension OnBoardingViewController {
+    func playCurrentVideo() {
+        /*
+         let items
+         let index
+         let item
+         player.currentItem.
+         player.play(item) //loop
+         */
+    }
+    
+    func playNextVideo() {
+        
     }
 }

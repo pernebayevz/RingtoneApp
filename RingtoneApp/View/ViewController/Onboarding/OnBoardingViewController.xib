@@ -14,7 +14,7 @@
                 <outlet property="closeBtn" destination="CdX-8W-2BL" id="feY-tM-bBJ"/>
                 <outlet property="collectionView" destination="Xu7-84-wlB" id="qIC-aL-KyP"/>
                 <outlet property="contentView" destination="HP8-No-Ns8" id="Ee1-mB-CDV"/>
-                <outlet property="playerView" destination="dVJ-Rt-dDE" id="AXV-iP-wbq"/>
+                <outlet property="videoPlayerView" destination="dVJ-Rt-dDE" id="i3V-As-KSC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,13 +26,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-No-Ns8">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-Rt-dDE" customClass="PlayerView" customModule="RingtoneApp" customModuleProvider="target">
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-Rt-dDE" customClass="VideoPlayerView" customModule="RingtoneApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xu7-84-wlB">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZbB-SC-Cnq">
                                 <size key="itemSize" width="128" height="128"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>

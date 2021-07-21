@@ -46,6 +46,7 @@
                     </stackView>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="UKi-n7-Vd3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="MGp-vH-DVR"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UKi-n7-Vd3" secondAttribute="trailing" constant="20" id="iJc-Rg-fhy"/>

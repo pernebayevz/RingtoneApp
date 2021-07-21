@@ -18,19 +18,9 @@ protocol PlayerViewDelegate: AnyObject {
 
 class PlayerView: UIView {
     
-    private let previewImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.backgroundColor = .clear
-        return imageView
-    }()
-    
     override class var layerClass: AnyClass {
         return AVPlayerLayer.self
     }
-    
     private var playerLayer: AVPlayerLayer {
         return layer as! AVPlayerLayer
     }
@@ -43,6 +33,14 @@ class PlayerView: UIView {
             playerLayer.player = newValue
         }
     }
+    private let previewImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .clear
+        return imageView
+    }()
     
     weak var delegate: PlayerViewDelegate?
     
@@ -58,10 +56,7 @@ class PlayerView: UIView {
     
     private func setupView() {
         backgroundColor = .clear
-        
         playerLayer.videoGravity = .resizeAspectFill
-        playerLayer.contentsGravity = .resizeAspectFill
-        playerLayer.backgroundColor = UIColor.black.cgColor
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler(_:))))
         addPreviewImageView()
