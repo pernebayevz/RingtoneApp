@@ -31,21 +31,18 @@ class OnBoardingViewController: UIViewController {
     let playerItems: [AVPlayerItem] = {
         var items: [AVPlayerItem] = []
         if let url = Bundle.main.url(forResource: "bored", withExtension: "mp4") {
-            items.append(AVPlayerItem(asset: AVAsset(url: url)))
+            let asset = AVAsset(url: url)
+            items.append(AVPlayerItem(asset: asset))
         }
         if let url = Bundle.main.url(forResource: "memorable", withExtension: "mp4") {
-            items.append(AVPlayerItem(asset: AVAsset(url: url)))
+            let asset = AVAsset(url: url)
+            items.append(AVPlayerItem(asset: asset))
         }
         if let url = Bundle.main.url(forResource: "subscription", withExtension: "mp4") {
-            items.append(AVPlayerItem(asset: AVAsset(url: url)))
+            let asset = AVAsset(url: url)
+            items.append(AVPlayerItem(asset: asset))
         }
         return items
-    }()
-    let playerItem: AVPlayerItem? = {
-        if let url = Bundle.main.url(forResource: "onboarding", withExtension: "mp4") {
-            return AVPlayerItem(url: url)
-        }
-        return nil
     }()
     var playerLooper: AVPlayerLooper?
     

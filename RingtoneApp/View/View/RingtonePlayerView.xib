@@ -21,38 +21,46 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="202" height="339"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T07-Zj-KgF" customClass="VideoPlayerView" customModule="RingtoneApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="202" height="339"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-xX-xU1">
-                    <rect key="frame" x="32" y="101.33333333333334" width="350" height="66.333333333333343"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yg1-dq-c1o">
+                    <rect key="frame" x="0.0" y="135.66666666666663" width="202" height="203.33333333333337"/>
+                    <imageReference key="image" image="up_gradient"/>
+                </imageView>
+                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-xX-xU1">
+                    <rect key="frame" x="32" y="20.666666666666668" width="138" height="60.333333333333329"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash Tunes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Y-yS-eiZ">
-                            <rect key="frame" x="0.0" y="0.0" width="350" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash Tunes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="J4Y-yS-eiZ">
+                            <rect key="frame" x="0.0" y="0.0" width="138" height="36"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="boost your mood" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dE-HA-cbq">
-                            <rect key="frame" x="0.0" y="46.000000000000014" width="350" height="20.333333333333329"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQZ-AB-ZH8">
+                            <rect key="frame" x="13.666666666666657" y="36" width="111" height="4"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="boost your mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="7dE-HA-cbq">
+                            <rect key="frame" x="5" y="40" width="128" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-NU-xbB">
-                    <rect key="frame" x="16" y="582" width="382" height="232.66666666666663"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-NU-xbB">
+                    <rect key="frame" x="16" y="99.000000000000014" width="170" height="209.33333333333337"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ze1-Jn-VEW">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ze1-Jn-VEW">
+                            <rect key="frame" x="0.0" y="0.0" width="170" height="51"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWN-bA-ffQ" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="191" height="51"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWN-bA-ffQ" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="51"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="image">
@@ -64,8 +72,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-Fx-5KA" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
-                                    <rect key="frame" x="191" y="0.0" width="191" height="51"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-Fx-5KA" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
+                                    <rect key="frame" x="85" y="0.0" width="85" height="51"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="image">
@@ -80,11 +88,15 @@
                             </subviews>
                             <gestureRecognizers/>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AKj-eH-Ueu">
-                            <rect key="frame" x="0.0" y="90.999999999999986" width="382" height="141.66666666666663"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8e-9j-Ebh">
+                            <rect key="frame" x="0.0" y="51" width="170" height="17"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AKj-eH-Ueu">
+                            <rect key="frame" x="0.0" y="68.000000000000014" width="170" height="141.33333333333337"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09h-qz-5aL" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="191" height="141.66666666666666"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09h-qz-5aL" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="141.33333333333334"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="image">
@@ -96,8 +108,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5O-lK-KXb" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
-                                    <rect key="frame" x="191" y="0.0" width="191" height="141.66666666666666"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5O-lK-KXb" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
+                                    <rect key="frame" x="85" y="0.0" width="85" height="141.33333333333334"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="image">
@@ -116,10 +128,16 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Yg1-dq-c1o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2al-tH-RKu"/>
+                <constraint firstItem="N8e-9j-Ebh" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.05" id="3Vg-UU-P0J"/>
+                <constraint firstItem="sQZ-AB-ZH8" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.012" id="6lK-eO-be5"/>
                 <constraint firstItem="T07-Zj-KgF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9wc-Le-yat"/>
+                <constraint firstAttribute="bottom" secondItem="Yg1-dq-c1o" secondAttribute="bottom" id="EBm-jj-fXm"/>
                 <constraint firstItem="zVu-xX-xU1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.3" id="G1C-i0-Cuz"/>
                 <constraint firstAttribute="bottom" secondItem="i7C-NU-xbB" secondAttribute="bottom" multiplier="1.1" id="Lnf-Ai-0qK"/>
+                <constraint firstAttribute="trailing" secondItem="Yg1-dq-c1o" secondAttribute="trailing" id="Oyh-Rs-aZQ"/>
                 <constraint firstAttribute="trailing" secondItem="T07-Zj-KgF" secondAttribute="trailing" id="Pq7-uf-tvJ"/>
+                <constraint firstItem="Yg1-dq-c1o" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.8" id="SxM-Xi-AY5"/>
                 <constraint firstAttribute="trailing" secondItem="zVu-xX-xU1" secondAttribute="trailing" constant="32" id="UWK-vk-WDU"/>
                 <constraint firstItem="T07-Zj-KgF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y9A-hX-TeI"/>
                 <constraint firstAttribute="trailing" secondItem="i7C-NU-xbB" secondAttribute="trailing" constant="16" id="aCO-nS-CZf"/>
@@ -128,7 +146,7 @@
                 <constraint firstAttribute="bottom" secondItem="T07-Zj-KgF" secondAttribute="bottom" id="zel-LW-bHf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="136.92307692307691" y="109.47867298578198"/>
+            <point key="canvasLocation" x="123.07692307692307" y="118.3649289099526"/>
         </view>
     </objects>
     <resources>
@@ -136,5 +154,6 @@
         <image name="save" width="113" height="113"/>
         <image name="share" width="24" height="24"/>
         <image name="stop" width="113" height="113"/>
+        <image name="up_gradient" width="414" height="387"/>
     </resources>
 </document>

@@ -23,6 +23,8 @@ class RingtoneListViewController: UIViewController {
     }
     
     private func setupView() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(viewModel, action: #selector(viewModel.fetchRingtones), for: .valueChanged)
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.register(UINib(nibName: RingtoneTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: RingtoneTableViewCell.nibName)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -49,14 +51,22 @@ class RingtoneListViewController: UIViewController {
         viewModel.errorMessage.subscribe {[unowned self] errorMessage in
             self.show(errorMessage: errorMessage)
         }.disposed(by: disposeBag)
+        viewModel.isFetching.subscribe(onNext: {[unowned self] isFetching in
+            if isFetching {
+                self.tableView.refreshControl?.beginRefreshing()
+            }else{
+                self.tableView.refreshControl?.endRefreshing()
+            }
+        }).disposed(by: disposeBag)
+        
+        viewModel.fetchRingtones()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetchRingtones()
-
-        let swipePopup = SwipeUpForMoreViewController()
-        swipePopup.show(in: self)
+//        viewModel.fetchRingtones()
+//        let swipePopup = SwipeUpForMoreViewController()
+//        swipePopup.show(in: self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

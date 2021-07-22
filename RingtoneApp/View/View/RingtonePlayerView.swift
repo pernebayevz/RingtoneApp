@@ -68,15 +68,23 @@ class RingtonePlayerView: UIView {
     }
     
     func prepareForReuse() {
-        playerView.prepareForReuse()
+        pauseOrPlayBtn.set(title: "Stop", image: UIImage(named: "stop"))
     }
     
     func setupContent(with ringtone: RingtoneCellModel) {
         self.ringTone = ringtone
         
-        let item = AVPlayerItem(asset: ringtone.asset)
-        playerView.player = AVQueuePlayer(playerItem: item)
-        ringtone.playerLooper = AVPlayerLooper(player: playerView.player!, templateItem: item)
+        if let url = URL(string: ringtone.ringtoneModel.videoURL) {
+            if ringtone.player == nil {
+                let asset = AVAsset(url: url)
+                let item = AVPlayerItem(asset: asset)
+                ringtone.player = AVQueuePlayer(playerItem: item)
+                ringtone.playerLooper = AVPlayerLooper(player: ringtone.player!, templateItem: item)
+            }
+            playerView.player = ringtone.player!
+        }else{
+            playerView.player = nil
+        }
     }
     
     func play() {

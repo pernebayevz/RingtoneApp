@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19129"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayerViewController" customModule="RingtoneApp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-wz-drl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-Zt-Gdd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zkF-IR-7dE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="zkF-IR-7dE" secondAttribute="trailing" id="5aa-6Z-msh"/>
+                                <constraint firstItem="zkF-IR-7dE" firstAttribute="leading" secondItem="c5l-Zt-Gdd" secondAttribute="leading" id="EM2-p8-8BU"/>
+                                <constraint firstItem="zkF-IR-7dE" firstAttribute="top" secondItem="c5l-Zt-Gdd" secondAttribute="top" id="Zb1-SB-p2y"/>
+                                <constraint firstAttribute="bottom" secondItem="zkF-IR-7dE" secondAttribute="bottom" id="dxZ-49-Jhr"/>
+                                <constraint firstItem="zkF-IR-7dE" firstAttribute="centerX" secondItem="c5l-Zt-Gdd" secondAttribute="centerX" id="pFj-g7-5u7"/>
+                                <constraint firstItem="zkF-IR-7dE" firstAttribute="centerY" secondItem="c5l-Zt-Gdd" secondAttribute="centerY" id="wCk-lz-gjn"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="c5l-Zt-Gdd" firstAttribute="height" secondItem="qnW-wz-drl" secondAttribute="height" id="4d5-KV-N7I"/>
+                        <constraint firstAttribute="trailing" secondItem="c5l-Zt-Gdd" secondAttribute="trailing" id="5Qr-NL-MtT"/>
+                        <constraint firstItem="c5l-Zt-Gdd" firstAttribute="width" secondItem="qnW-wz-drl" secondAttribute="width" id="SSY-9D-Jti"/>
+                        <constraint firstItem="c5l-Zt-Gdd" firstAttribute="top" secondItem="qnW-wz-drl" secondAttribute="top" id="clm-ys-vfx"/>
+                        <constraint firstAttribute="bottom" secondItem="c5l-Zt-Gdd" secondAttribute="bottom" id="gue-hX-WNi"/>
+                        <constraint firstItem="c5l-Zt-Gdd" firstAttribute="leading" secondItem="qnW-wz-drl" secondAttribute="leading" id="kAt-t2-sgV"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTE-Ji-F9Q" customClass="VideoPlayerView" customModule="RingtoneApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="AcP-A5-EY7">
+                    <rect key="frame" x="158" y="388" width="240" height="311"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-Ew-1Af" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="143.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image">
+                                    <imageReference key="value" image="share"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Share"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                    <real key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PlA-Fy-w7z" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="167.5" width="240" height="143.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image">
+                                    <imageReference key="value" image="download"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Download"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AcP-A5-EY7" secondAttribute="trailing" constant="16" id="90S-nv-ArR"/>
+                <constraint firstItem="qnW-wz-drl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Hlc-fP-1Pq"/>
+                <constraint firstItem="RTE-Ji-F9Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IU0-Tr-bkP"/>
+                <constraint firstItem="RTE-Ji-F9Q" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ZOq-7L-APO"/>
+                <constraint firstItem="AcP-A5-EY7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.2" id="bji-ur-3M1"/>
+                <constraint firstItem="qnW-wz-drl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="e4i-pe-uEA"/>
+                <constraint firstAttribute="bottom" secondItem="qnW-wz-drl" secondAttribute="bottom" id="f2K-4o-Zrw"/>
+                <constraint firstItem="RTE-Ji-F9Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iZY-lF-836"/>
+                <constraint firstItem="qnW-wz-drl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mN4-pO-NCd"/>
+                <constraint firstAttribute="trailing" secondItem="RTE-Ji-F9Q" secondAttribute="trailing" id="wgg-DY-Xdb"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="download" width="97" height="97"/>
+        <image name="share" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

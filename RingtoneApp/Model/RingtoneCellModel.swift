@@ -10,11 +10,10 @@ import AVFoundation
 
 class RingtoneCellModel {
     let ringtoneModel: RingtoneModel
-    let asset: AVAsset
+    var player: AVQueuePlayer?
     var playerLooper: AVPlayerLooper?
     
-    init(ringtoneModel: RingtoneModel, asset: AVAsset) {
+    init(ringtoneModel: RingtoneModel) {
         self.ringtoneModel = ringtoneModel
-        self.asset = asset
     }
 }

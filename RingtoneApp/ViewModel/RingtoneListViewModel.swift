@@ -16,6 +16,7 @@ class RingtoneListViewModel {
     let networkManager = NetworkManager()
     let errorMessage = PublishSubject<String>()
     let disposeBag = DisposeBag()
+    let isFetching = PublishSubject<Bool>()
     
     init() {
         ringtones.subscribe(onNext: {[unowned self] ringtones in
@@ -23,13 +24,16 @@ class RingtoneListViewModel {
         }).disposed(by: disposeBag)
     }
     
-    func fetchRingtones() {
-        networkManager.getCallList {[weak ringtonesObserver = ringtones, weak errorMessage] ringtones, error in
-            DispatchQueue.main.sync {[weak ringtonesObserver, ringtones, weak errorMessage] in
+    @objc func fetchRingtones() {
+        isFetching.onNext(true)
+        networkManager.getCallList {[weak self] ringtones, error in
+            DispatchQueue.main.sync {[weak self] in
+                self?.isFetching.onNext(false)
+                
                 if let ringtones = ringtones {
-                    ringtonesObserver?.onNext(ringtones.shuffled())
+                    self?.ringtones.onNext(ringtones.shuffled())
                 }else if let error = error {
-                    errorMessage?.onNext(error)
+                    self?.errorMessage.onNext(error)
                 }
             }
         }
@@ -45,10 +49,7 @@ class RingtoneListViewModel {
     
     func generateCellRingtones(ringtones: [RingtoneModel]) {
         let cells = ringtones.compactMap { ringtone -> RingtoneCellModel? in
-            guard let url = URL(string: RingtoneApi.callList.environmentBaseURL + ringtone.url) else { return nil }
-            
-            let asset = AVAsset(url: url)
-            let cell = RingtoneCellModel(ringtoneModel: ringtone, asset: asset)
+            let cell = RingtoneCellModel(ringtoneModel: ringtone)
             return cell
         }
         cellRingtones.onNext(cells)

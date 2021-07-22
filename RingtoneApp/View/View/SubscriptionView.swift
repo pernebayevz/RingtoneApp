@@ -19,7 +19,7 @@ protocol SubscriptionViewDelegate: AnyObject {
 class SubscriptionView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var playerView: PlayerView!
+    @IBOutlet weak var playerView: VideoPlayerView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainVStackView: UIStackView!
     @IBOutlet weak var unlimitedAccessImageView: UIImageView!

@@ -13,6 +13,7 @@ enum NetworkEnvironment {
 
 public enum RingtoneApi {
     case callList
+    case main
 }
 
 extension RingtoneApi: EndPointType {
@@ -36,6 +37,8 @@ extension RingtoneApi: EndPointType {
         switch self {
         case .callList:
             return "/call.json"
+        case .main:
+            return "/main-ios.json"
         }
     }
     

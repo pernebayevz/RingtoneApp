@@ -55,11 +55,6 @@ class VideoPlayerView: UIView, VideoPlayerProtocol {
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
         playOrPauseVideoImmediately()
     }
-    
-    func prepareForReuse() {
-        player = nil
-        delegate = nil
-    }
 }
 
 extension VideoPlayerView {
@@ -83,6 +78,7 @@ extension VideoPlayerView {
             return
         }
         player.playImmediately(atRate: rate)
+        delegate?.didPlay()
     }
     
     func pauseVideo() {
@@ -90,6 +86,7 @@ extension VideoPlayerView {
             return
         }
         player.pause()
+        delegate?.didPause()
     }
     
     func playOrPauseVideoImmediately(at rate: Float = 1.0) {
