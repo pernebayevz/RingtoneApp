@@ -8,6 +8,9 @@
 import UIKit
 
 extension UIView {
+    static var nibName: String {
+        return String(describing: Self.self)
+    }
     
     func loadNib(with name: String? = nil) -> UIView? {
         let bundle = Bundle(for: type(of: self))

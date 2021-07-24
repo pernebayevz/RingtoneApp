@@ -46,6 +46,8 @@ class HomeViewController: UIViewController {
     
     private func setupView() {
         tableView.register(UINib(nibName: FlashCallTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: FlashCallTableViewCell.nibName)
+        tableView.register(UINib(nibName: LiveTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: LiveTableViewCell.nibName)
+        tableView.register(UINib(nibName: Popular4KTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: Popular4KTableViewCell.nibName)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -77,6 +79,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.topCall = viewModel.mainData?.topcall
             cell.collectionView.currentXOffset = viewModel.topCallXOffset
             cell.collectionView.flashCallDelegate = self
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: LiveTableViewCell.nibName, for: indexPath) as! LiveTableViewCell
+            cell.collectionView.items = viewModel.liveData
+            cell.collectionView.currentXOffset = viewModel.topLiveXOffset
+            cell.collectionView.liveCollectionViewDelegate = self
+            return cell
+            
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: Popular4KTableViewCell.nibName, for: indexPath) as! Popular4KTableViewCell
+            cell.collectionView.items = viewModel.liveData
+            cell.collectionView.currentXOffset = viewModel.topLiveXOffset
+            cell.collectionView.popular4kDelegate = self
             return cell
         default:
             return UITableViewCell()
@@ -114,5 +130,28 @@ extension HomeViewController: FlashCallCollectionViewDelegate {
     
     func flashCallScrollViewDidScroll(xOffset: CGFloat) {
         viewModel.topCallXOffset = xOffset
+    }
+}
+
+extension HomeViewController: LiveCollectionViewDelegate {
+    func liveCollectionViewDidScroll(xOffset: CGFloat) {
+        viewModel.topLiveXOffset = xOffset
+    }
+    
+    func didSelectLiveCollectionViewCell(at indexPath: IndexPath) {
+        let ringtone = viewModel.liveData[indexPath.item]
+        let vc = WallPaperViewController(type: .live(videoURL: ringtone.ringtoneModel.videoURL))
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension HomeViewController: Popular4KCollectionViewDelegate {
+    func popular4KCollectionViewDidScroll(xOffset: CGFloat) {
+        viewModel.popular4KXOffset = xOffset
+    }
+    
+    func didSelectPopular4KCollectionViewCell(at indexPath: IndexPath) {
+        
     }
 }

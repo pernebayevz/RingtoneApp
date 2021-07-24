@@ -15,9 +15,16 @@ protocol HomeViewModelDelegate: AnyObject {
 class HomeViewModel {
     let networkManager = NetworkManager()
     weak var delegate: HomeViewModelDelegate?
-    var mainData: MainModel?
+    var mainData: MainModel? {
+        didSet {
+            generateLiveData()
+        }
+    }
+    var liveData: [RingtoneCellModel] = []
     
     var topCallXOffset: CGFloat = 0
+    var topLiveXOffset: CGFloat = 0
+    var popular4KXOffset: CGFloat = 0
     
     func fetchData() {
         networkManager.getMain {[weak self] mainData, error in
@@ -30,6 +37,15 @@ class HomeViewModel {
                     self?.delegate?.errorDidAppear(message: error)
                 }
             }
+        }
+    }
+    
+    func generateLiveData() {
+        guard let mainData = mainData else {
+            return
+        }
+        liveData = mainData.toplive.array.map { ringtone in
+            return RingtoneCellModel(ringtoneModel: ringtone)
         }
     }
 }

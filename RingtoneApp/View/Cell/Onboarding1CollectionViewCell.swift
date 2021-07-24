@@ -8,8 +8,6 @@
 import UIKit
 
 class Onboarding1CollectionViewCell: UICollectionViewCell, OnBoardingCellProtocol {
-    static let nibName: String = "Onboarding1CollectionViewCell"
-    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var continueBtn: UIButton!

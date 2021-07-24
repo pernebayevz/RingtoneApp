@@ -10,7 +10,6 @@ import AVFoundation
 
 class RingtoneTableViewCell: UITableViewCell {
 
-    static let nibName: String = String(describing: RingtoneTableViewCell.self)
     @IBOutlet weak var ringtonePlayerView: RingtonePlayerView!
     
     override func awakeFromNib() {

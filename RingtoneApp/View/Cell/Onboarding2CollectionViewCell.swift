@@ -8,8 +8,6 @@
 import UIKit
 
 class Onboarding2CollectionViewCell: UICollectionViewCell, OnBoardingCellProtocol {
-    static let nibName: String = "Onboarding2CollectionViewCell"
-    
     @IBOutlet private weak var subscriptionView: SubscriptionView!
     
     var indexPath: IndexPath?

@@ -12,8 +12,6 @@ protocol FlashCallTableViewCellDelegate: AnyObject {
 }
 
 class FlashCallTableViewCell: UITableViewCell {
-    static let nibName: String = "FlashCallTableViewCell"
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var arrowRightBtn: UIButton!
     @IBOutlet weak var collectionView: FlashCallCollectionView!

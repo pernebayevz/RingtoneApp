@@ -10,8 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayerViewController" customModule="RingtoneApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WallPaperViewController" customModule="RingtoneApp" customModuleProvider="target">
             <connections>
+                <outlet property="downLoadBtn" destination="PlA-Fy-w7z" id="UPm-0N-v7l"/>
+                <outlet property="imageView" destination="zkF-IR-7dE" id="r7z-Jg-O9h"/>
+                <outlet property="imageViewContainer" destination="qnW-wz-drl" id="a5Q-8R-lG4"/>
+                <outlet property="playerView" destination="RTE-Ji-F9Q" id="oF8-Kn-VVz"/>
+                <outlet property="scrollView" destination="c5l-Zt-Gdd" id="0Fh-mv-XRV"/>
+                <outlet property="shareBtn" destination="3wb-Ew-1Af" id="Bq4-2x-gU3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +29,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-wz-drl">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-Zt-Gdd">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-Zt-Gdd">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zkF-IR-7dE">
@@ -54,7 +60,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="AcP-A5-EY7">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="AcP-A5-EY7">
                     <rect key="frame" x="158" y="388" width="240" height="311"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-Ew-1Af" customClass="VerticalButton" customModule="RingtoneApp" customModuleProvider="target">
@@ -89,15 +95,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AcP-A5-EY7" secondAttribute="trailing" constant="16" id="90S-nv-ArR"/>
                 <constraint firstItem="qnW-wz-drl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Hlc-fP-1Pq"/>
                 <constraint firstItem="RTE-Ji-F9Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IU0-Tr-bkP"/>
                 <constraint firstItem="RTE-Ji-F9Q" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ZOq-7L-APO"/>
-                <constraint firstItem="AcP-A5-EY7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.2" id="bji-ur-3M1"/>
                 <constraint firstItem="qnW-wz-drl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="e4i-pe-uEA"/>
                 <constraint firstAttribute="bottom" secondItem="qnW-wz-drl" secondAttribute="bottom" id="f2K-4o-Zrw"/>
                 <constraint firstItem="RTE-Ji-F9Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iZY-lF-836"/>
+                <constraint firstItem="AcP-A5-EY7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.2" id="m4k-Kw-F52"/>
                 <constraint firstItem="qnW-wz-drl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mN4-pO-NCd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AcP-A5-EY7" secondAttribute="trailing" constant="16" id="r5H-mv-Vhq"/>
                 <constraint firstAttribute="trailing" secondItem="RTE-Ji-F9Q" secondAttribute="trailing" id="wgg-DY-Xdb"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>

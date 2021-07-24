@@ -74,17 +74,14 @@ class RingtonePlayerView: UIView {
     func setupContent(with ringtone: RingtoneCellModel) {
         self.ringTone = ringtone
         
-        if let url = URL(string: ringtone.ringtoneModel.videoURL) {
-            if ringtone.player == nil {
-                let asset = AVAsset(url: url)
-                let item = AVPlayerItem(asset: asset)
-                ringtone.player = AVQueuePlayer(playerItem: item)
-                ringtone.playerLooper = AVPlayerLooper(player: ringtone.player!, templateItem: item)
-            }
-            playerView.player = ringtone.player!
-        }else{
-            playerView.player = nil
+        if ringtone.player == nil, let url = URL(string: ringtone.ringtoneModel.videoURL) {
+            let asset = AVAsset(url: url)
+            let playerItem = AVPlayerItem(asset: asset)
+            let player = AVQueuePlayer(playerItem: playerItem)
+            ringtone.player = player
+            ringtone.playerLooper = AVPlayerLooper(player: player, templateItem: playerItem)
         }
+        playerView.player = ringtone.player
     }
     
     func play() {

@@ -8,8 +8,6 @@
 import UIKit
 
 class RingtoneCollectionViewCell: UICollectionViewCell {
-    static let nibName: String = "RingtoneCollectionViewCell"
-    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var coverImageView: UIImageView!
