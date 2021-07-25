@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //        window?.rootViewController = rootVC
         window?.rootViewController = TabbarController()
-//        window?.rootViewController = VideoPlayerViewController()
         window?.makeKeyAndVisible()
         return true
     }
