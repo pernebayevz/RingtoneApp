@@ -12,10 +12,10 @@ class RingtoneViewController: UIViewController {
 
     @IBOutlet weak var rintgtonePlayerView: RingtonePlayerView!
     
-    let ringtone: RingtoneModel
+    let ringtone: URLModel
     var playerLooper: AVPlayerLooper?
     
-    init(ringtone: RingtoneModel) {
+    init(ringtone: URLModel) {
         self.ringtone = ringtone
         super.init(nibName: "RingtoneViewController", bundle: nil)
     }

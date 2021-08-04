@@ -8,12 +8,12 @@
 import Foundation
 import AVFoundation
 
-class RingtoneCellModel {
-    let ringtoneModel: RingtoneModel
+class PlayerModel {
+    let ringtoneModel: URLModel
     var player: AVQueuePlayer?
     var playerLooper: AVPlayerLooper?
     
-    init(ringtoneModel: RingtoneModel) {
+    init(ringtoneModel: URLModel) {
         self.ringtoneModel = ringtoneModel
     }
 }

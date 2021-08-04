@@ -11,8 +11,6 @@ import RxSwift
 
 @IBDesignable
 class VerticalButton: UIView {
-
-    private let kCONTENT_XIB_NAME: String = "VerticalButton"
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var stackView: UIStackView!
@@ -35,7 +33,7 @@ class VerticalButton: UIView {
         }
     }
     
-    var tapEvent = PublishSubject<Void>()
+    let tapEvent = PublishSubject<Void>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,6 +43,10 @@ class VerticalButton: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
+    }
+    
+    deinit {
+        tapEvent.dispose()
     }
     
     func setupView() {

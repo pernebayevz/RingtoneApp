@@ -20,19 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
         }
         
-//        let rootVC = UINavigationController()
-//        rootVC.setNavigationBarHidden(true, animated: false)
-//        let launchScreenVC = LaunchScreenViewController {[unowned rootVC] in
-//            let onboardingVC = OnBoardingViewController()
-//            onboardingVC.onExit = {[unowned rootVC] in
-//                rootVC.setViewControllers([TabbarController()], animated: false)
-//            }
-//            rootVC.setViewControllers([onboardingVC], animated: false)
-//        }
-//        rootVC.viewControllers = [launchScreenVC]
-//
-//        window?.rootViewController = rootVC
-        window?.rootViewController = TabbarController()
+        let rootVC = UINavigationController()
+        rootVC.setNavigationBarHidden(true, animated: false)
+        let launchScreenVC = LaunchScreenViewController {[unowned rootVC] in
+            let onboardingVC = OnBoardingViewController()
+            onboardingVC.onExit = {[unowned rootVC] in
+                rootVC.setViewControllers([TabbarController()], animated: false)
+            }
+            rootVC.setViewControllers([onboardingVC], animated: false)
+        }
+        rootVC.viewControllers = [launchScreenVC]
+
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
         return true
     }

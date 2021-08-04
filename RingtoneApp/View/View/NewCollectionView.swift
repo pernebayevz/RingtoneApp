@@ -1,17 +1,19 @@
 //
-//  Popular4KCollectionView.swift
-//  Popular4KCollectionView
+//  NewCollectionView.swift
+//  NewCollectionView
 //
-//  Created by Zhangali Pernebayev on 23.07.2021.
+//  Created by Zhangali Pernebayev on 26.07.2021.
 //
 
 import UIKit
-import Kingfisher
 
-class Popular4KCollectionView: HomeBaseCollectionView {
+
+class NewCollectionView: HomeBaseCollectionView {
     init() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         super.init(frame: .zero, collectionViewLayout: layout)
         setupCell()
     }
@@ -27,24 +29,25 @@ class Popular4KCollectionView: HomeBaseCollectionView {
     }
     
     private func setupCell() {
+        contentInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         register(UINib(nibName: ImageCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: ImageCollectionViewCell.nibName)
         delegate = self
     }
 }
 
-extension Popular4KCollectionView {
+extension NewCollectionView {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.nibName, for: indexPath) as! ImageCollectionViewCell
         let item = items[indexPath.item] as! BaseModel
         cell.imageView.kf.setImage(with: URL(string: item.urlPhotoFull))
-        cell.gradientBgImageView.isHidden = false
-        cell.tagLabel.isHidden = false
-        cell.tagLabel.text = item.nameCategory
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: CGFloat = bounds.height - contentInset.top - contentInset.bottom
-        return CGSize(width: height, height: height)
+        let minLineSpacing: CGFloat = (collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing
+        let minInteritemSpacing: CGFloat = (collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
+        let height: CGFloat = (bounds.height - contentInset.top - contentInset.bottom - minLineSpacing)/2
+        let width: CGFloat = (bounds.width - contentInset.left - contentInset.right - minInteritemSpacing)/2
+        return CGSize(width: width, height: height)
     }
 }

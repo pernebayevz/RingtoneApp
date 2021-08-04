@@ -4,14 +4,10 @@
 <dict>
 	<key></key>
 	<string></string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

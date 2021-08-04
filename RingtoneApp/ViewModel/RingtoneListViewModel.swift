@@ -8,17 +8,19 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import RxRelay
 import AVFoundation
 
 class RingtoneListViewModel {
-    let ringtones = PublishSubject<[RingtoneModel]>()
-    let cellRingtones = PublishSubject<[RingtoneCellModel]>()
+    let ringtones = PublishSubject<[URLModel]>()
+    let cellRingtones = BehaviorSubject<[PlayerModel]>(value: [])
     let networkManager = NetworkManager()
     let errorMessage = PublishSubject<String>()
     let disposeBag = DisposeBag()
     let isFetching = PublishSubject<Bool>()
     
-    init() {
+    init(dataSource: [PlayerModel] = []) {
+        cellRingtones.onNext(dataSource)
         ringtones.subscribe(onNext: {[unowned self] ringtones in
             self.generateCellRingtones(ringtones: ringtones)
         }).disposed(by: disposeBag)
@@ -39,6 +41,16 @@ class RingtoneListViewModel {
         }
     }
     
+    func fetchRingtonesIfNeeded() {
+        if let value = try? cellRingtones.value() {
+            if value.count == 0 {
+                fetchRingtones()
+            }
+        }else{
+            fetchRingtones()
+        }
+    }
+    
     func refetchRingtones() {
         
     }
@@ -47,9 +59,9 @@ class RingtoneListViewModel {
         
     }
     
-    func generateCellRingtones(ringtones: [RingtoneModel]) {
-        let cells = ringtones.compactMap { ringtone -> RingtoneCellModel? in
-            let cell = RingtoneCellModel(ringtoneModel: ringtone)
+    func generateCellRingtones(ringtones: [URLModel]) {
+        let cells = ringtones.compactMap { ringtone -> PlayerModel? in
+            let cell = PlayerModel(ringtoneModel: ringtone)
             return cell
         }
         cellRingtones.onNext(cells)

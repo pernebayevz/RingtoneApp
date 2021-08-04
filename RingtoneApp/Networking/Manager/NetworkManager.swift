@@ -26,7 +26,7 @@ struct NetworkManager {
     static let environment : NetworkEnvironment = .production
     let router = Router<RingtoneApi>()
     
-    func getCallList(completion: @escaping (_ ringtones: [RingtoneModel]?,_ error: String?)->()){
+    func getCallList(completion: @escaping (_ ringtones: [URLModel]?,_ error: String?)->()){
         router.request(.callList) { data, response, error in
             if error != nil {
                 completion(nil, "Please check your network connection.")
@@ -44,7 +44,7 @@ struct NetworkManager {
                         print(responseData)
                         let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
                         print(jsonData)
-                        let apiResponse = try JSONDecoder().decode(CallAPIResponse.self, from: responseData)
+                        let apiResponse = try JSONDecoder().decode(BaseModel.self, from: responseData)
                         completion(apiResponse.array, nil)
                     }catch {
                         print(error)

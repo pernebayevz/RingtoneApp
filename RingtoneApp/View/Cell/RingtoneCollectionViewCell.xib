@@ -24,6 +24,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jLy-dl-ufL">
                                 <rect key="frame" x="0.0" y="0.0" width="557" height="505"/>
                             </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKM-za-atA" customClass="VideoPlayerView" customModule="RingtoneApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="557" height="505"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XU2-IK-SWq">
                                 <rect key="frame" x="0.0" y="0.0" width="557" height="505"/>
                                 <imageReference key="image" image="ringtone_cover"/>
@@ -35,9 +39,13 @@
                             <constraint firstItem="jLy-dl-ufL" firstAttribute="leading" secondItem="xfn-mr-mYN" secondAttribute="leading" id="Nmb-Fd-jV2"/>
                             <constraint firstItem="XU2-IK-SWq" firstAttribute="leading" secondItem="xfn-mr-mYN" secondAttribute="leading" id="Yh7-cI-pkM"/>
                             <constraint firstAttribute="bottom" secondItem="XU2-IK-SWq" secondAttribute="bottom" id="bmt-dz-ogz"/>
+                            <constraint firstAttribute="trailing" secondItem="PKM-za-atA" secondAttribute="trailing" id="hv5-bL-lxR"/>
                             <constraint firstAttribute="bottom" secondItem="jLy-dl-ufL" secondAttribute="bottom" id="jHz-UZ-HTg"/>
                             <constraint firstAttribute="trailing" secondItem="XU2-IK-SWq" secondAttribute="trailing" id="pNk-hd-hem"/>
+                            <constraint firstItem="PKM-za-atA" firstAttribute="leading" secondItem="xfn-mr-mYN" secondAttribute="leading" id="pzm-BV-18K"/>
+                            <constraint firstAttribute="bottom" secondItem="PKM-za-atA" secondAttribute="bottom" id="qQ2-zY-wg0"/>
                             <constraint firstAttribute="trailing" secondItem="jLy-dl-ufL" secondAttribute="trailing" id="sDl-7M-Hwc"/>
+                            <constraint firstItem="PKM-za-atA" firstAttribute="top" secondItem="xfn-mr-mYN" secondAttribute="top" id="yET-qE-rzt"/>
                             <constraint firstItem="XU2-IK-SWq" firstAttribute="top" secondItem="xfn-mr-mYN" secondAttribute="top" id="yjA-f6-Jg0"/>
                         </constraints>
                     </view>
@@ -56,6 +64,7 @@
                 <outlet property="containerView" destination="xfn-mr-mYN" id="QpU-DR-qJH"/>
                 <outlet property="coverImageView" destination="XU2-IK-SWq" id="Eel-8R-WcJ"/>
                 <outlet property="imageView" destination="jLy-dl-ufL" id="Ad2-jx-dI9"/>
+                <outlet property="videoPlayerView" destination="PKM-za-atA" id="a8d-A2-5It"/>
             </connections>
             <point key="canvasLocation" x="505.07246376811599" y="288.28125"/>
         </collectionViewCell>

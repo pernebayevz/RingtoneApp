@@ -20,11 +20,16 @@
 		0D213A9226AAAA8700AC48DC /* LiveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D213A9026AAAA8700AC48DC /* LiveCollectionViewCell.swift */; };
 		0D213A9326AAAA8700AC48DC /* LiveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D213A9126AAAA8700AC48DC /* LiveCollectionViewCell.xib */; };
 		0D213A9526AAAB2100AC48DC /* LiveCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D213A9426AAAB2100AC48DC /* LiveCollectionView.swift */; };
-		0D213A9826AAB02C00AC48DC /* LiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D213A9626AAB02C00AC48DC /* LiveTableViewCell.swift */; };
-		0D213A9926AAB02C00AC48DC /* LiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D213A9726AAB02C00AC48DC /* LiveTableViewCell.xib */; };
-		0D213A9C26AAE68700AC48DC /* Popular4KTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D213A9A26AAE68700AC48DC /* Popular4KTableViewCell.swift */; };
-		0D213A9D26AAE68700AC48DC /* Popular4KTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D213A9B26AAE68700AC48DC /* Popular4KTableViewCell.xib */; };
 		0D213A9F26AAE76300AC48DC /* Popular4KCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D213A9E26AAE76300AC48DC /* Popular4KCollectionView.swift */; };
+		0D2F8E7826ADB4E500DAD93D /* HomeTabBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E7726ADB4E500DAD93D /* HomeTabBaseTableViewCell.swift */; };
+		0D2F8E7A26ADBEC100DAD93D /* TopCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E7926ADBEC100DAD93D /* TopCallTableViewCell.swift */; };
+		0D2F8E7D26ADCFB100DAD93D /* TopCallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E7B26ADCFB100DAD93D /* TopCallListViewController.swift */; };
+		0D2F8E7E26ADCFB100DAD93D /* TopCallListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2F8E7C26ADCFB100DAD93D /* TopCallListViewController.xib */; };
+		0D2F8E8226ADD38600DAD93D /* TopCallListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E8126ADD38600DAD93D /* TopCallListViewModel.swift */; };
+		0D2F8E8426ADE63000DAD93D /* HomeLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E8326ADE63000DAD93D /* HomeLiveTableViewCell.swift */; };
+		0D2F8E8626AE99CD00DAD93D /* Popular4KTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E8526AE99CD00DAD93D /* Popular4KTableViewCell.swift */; };
+		0D2F8E8826AEAE8600DAD93D /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E8726AEAE8600DAD93D /* NewTableViewCell.swift */; };
+		0D2F8E8A26AEAEBF00DAD93D /* NewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F8E8926AEAEBF00DAD93D /* NewCollectionView.swift */; };
 		0D5FF04826A57456000BD241 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5FF04726A57456000BD241 /* OnboardingViewModel.swift */; };
 		0D5FF04B26A574C1000BD241 /* Onboarding1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5FF04926A574C1000BD241 /* Onboarding1CollectionViewCell.swift */; };
 		0D5FF04C26A574C1000BD241 /* Onboarding1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5FF04A26A574C1000BD241 /* Onboarding1CollectionViewCell.xib */; };
@@ -49,8 +54,6 @@
 		0D8337C226A987C100FD4A55 /* WallPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8337C026A987C100FD4A55 /* WallPaperViewController.swift */; };
 		0D8337C326A987C100FD4A55 /* WallPaperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8337C126A987C100FD4A55 /* WallPaperViewController.xib */; };
 		0D8337C526A98E4D00FD4A55 /* FlashCallCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8337C426A98E4D00FD4A55 /* FlashCallCollectionView.swift */; };
-		0D8337C826A9929400FD4A55 /* FlashCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8337C626A9929400FD4A55 /* FlashCallTableViewCell.swift */; };
-		0D8337C926A9929400FD4A55 /* FlashCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8337C726A9929400FD4A55 /* FlashCallTableViewCell.xib */; };
 		0D8337CB26A9A13800FD4A55 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8337CA26A9A13800FD4A55 /* HomeViewModel.swift */; };
 		0D868A6E26AA180E00BB427E /* RingtoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D868A6C26AA180E00BB427E /* RingtoneViewController.swift */; };
 		0D868A6F26AA180E00BB427E /* RingtoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D868A6D26AA180E00BB427E /* RingtoneViewController.xib */; };
@@ -71,7 +74,7 @@
 		0DAA0B1526A1BC00001D2C36 /* memorable.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B1226A1BBFF001D2C36 /* memorable.mp4 */; };
 		0DAA0B1626A1BC00001D2C36 /* bored.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B1326A1BBFF001D2C36 /* bored.mp4 */; };
 		0DAA0B1726A1BC00001D2C36 /* subscription.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA0B1426A1BC00001D2C36 /* subscription.mp4 */; };
-		0DD204EB26A8A92F00C4CDD8 /* RingtoneCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD204EA26A8A92F00C4CDD8 /* RingtoneCellModel.swift */; };
+		0DD204EB26A8A92F00C4CDD8 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD204EA26A8A92F00C4CDD8 /* PlayerModel.swift */; };
 		0DECFF75269DD61F00659800 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF74269DD61F00659800 /* call.json */; };
 		0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */; };
 		0DECFF79269DD64C00659800 /* LaunchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */; };
@@ -107,11 +110,16 @@
 		0D213A9026AAAA8700AC48DC /* LiveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D213A9126AAAA8700AC48DC /* LiveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCollectionViewCell.xib; sourceTree = "<group>"; };
 		0D213A9426AAAB2100AC48DC /* LiveCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollectionView.swift; sourceTree = "<group>"; };
-		0D213A9626AAB02C00AC48DC /* LiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTableViewCell.swift; sourceTree = "<group>"; };
-		0D213A9726AAB02C00AC48DC /* LiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveTableViewCell.xib; sourceTree = "<group>"; };
-		0D213A9A26AAE68700AC48DC /* Popular4KTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular4KTableViewCell.swift; sourceTree = "<group>"; };
-		0D213A9B26AAE68700AC48DC /* Popular4KTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Popular4KTableViewCell.xib; sourceTree = "<group>"; };
 		0D213A9E26AAE76300AC48DC /* Popular4KCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular4KCollectionView.swift; sourceTree = "<group>"; };
+		0D2F8E7726ADB4E500DAD93D /* HomeTabBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBaseTableViewCell.swift; sourceTree = "<group>"; };
+		0D2F8E7926ADBEC100DAD93D /* TopCallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCallTableViewCell.swift; sourceTree = "<group>"; };
+		0D2F8E7B26ADCFB100DAD93D /* TopCallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCallListViewController.swift; sourceTree = "<group>"; };
+		0D2F8E7C26ADCFB100DAD93D /* TopCallListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCallListViewController.xib; sourceTree = "<group>"; };
+		0D2F8E8126ADD38600DAD93D /* TopCallListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCallListViewModel.swift; sourceTree = "<group>"; };
+		0D2F8E8326ADE63000DAD93D /* HomeLiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveTableViewCell.swift; sourceTree = "<group>"; };
+		0D2F8E8526AE99CD00DAD93D /* Popular4KTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular4KTableViewCell.swift; sourceTree = "<group>"; };
+		0D2F8E8726AEAE8600DAD93D /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
+		0D2F8E8926AEAEBF00DAD93D /* NewCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionView.swift; sourceTree = "<group>"; };
 		0D5FF04726A57456000BD241 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		0D5FF04926A574C1000BD241 /* Onboarding1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1CollectionViewCell.swift; sourceTree = "<group>"; };
 		0D5FF04A26A574C1000BD241 /* Onboarding1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Onboarding1CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -136,8 +144,6 @@
 		0D8337C026A987C100FD4A55 /* WallPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPaperViewController.swift; sourceTree = "<group>"; };
 		0D8337C126A987C100FD4A55 /* WallPaperViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallPaperViewController.xib; sourceTree = "<group>"; };
 		0D8337C426A98E4D00FD4A55 /* FlashCallCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCallCollectionView.swift; sourceTree = "<group>"; };
-		0D8337C626A9929400FD4A55 /* FlashCallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCallTableViewCell.swift; sourceTree = "<group>"; };
-		0D8337C726A9929400FD4A55 /* FlashCallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashCallTableViewCell.xib; sourceTree = "<group>"; };
 		0D8337CA26A9A13800FD4A55 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0D843F68269DBB9A00C6275E /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D843F69269DBB9A00C6275E /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +168,7 @@
 		0DAA0B1226A1BBFF001D2C36 /* memorable.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = memorable.mp4; sourceTree = "<group>"; };
 		0DAA0B1326A1BBFF001D2C36 /* bored.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bored.mp4; sourceTree = "<group>"; };
 		0DAA0B1426A1BC00001D2C36 /* subscription.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = subscription.mp4; sourceTree = "<group>"; };
-		0DD204EA26A8A92F00C4CDD8 /* RingtoneCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneCellModel.swift; sourceTree = "<group>"; };
+		0DD204EA26A8A92F00C4CDD8 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		0DECFF74269DD61F00659800 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
 		0DECFF76269DD64C00659800 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		0DECFF77269DD64C00659800 /* LaunchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenViewController.xib; sourceTree = "<group>"; };
@@ -213,14 +219,13 @@
 				0D8337B926A986A400FD4A55 /* VideoPlayerCollectionViewCell.xib */,
 				0D8337BC26A986CF00FD4A55 /* ImageCollectionViewCell.swift */,
 				0D8337BD26A986CF00FD4A55 /* ImageCollectionViewCell.xib */,
-				0D8337C626A9929400FD4A55 /* FlashCallTableViewCell.swift */,
-				0D8337C726A9929400FD4A55 /* FlashCallTableViewCell.xib */,
 				0D213A9026AAAA8700AC48DC /* LiveCollectionViewCell.swift */,
 				0D213A9126AAAA8700AC48DC /* LiveCollectionViewCell.xib */,
-				0D213A9626AAB02C00AC48DC /* LiveTableViewCell.swift */,
-				0D213A9726AAB02C00AC48DC /* LiveTableViewCell.xib */,
-				0D213A9A26AAE68700AC48DC /* Popular4KTableViewCell.swift */,
-				0D213A9B26AAE68700AC48DC /* Popular4KTableViewCell.xib */,
+				0D2F8E7726ADB4E500DAD93D /* HomeTabBaseTableViewCell.swift */,
+				0D2F8E7926ADBEC100DAD93D /* TopCallTableViewCell.swift */,
+				0D2F8E8326ADE63000DAD93D /* HomeLiveTableViewCell.swift */,
+				0D2F8E8526AE99CD00DAD93D /* Popular4KTableViewCell.swift */,
+				0D2F8E8726AEAE8600DAD93D /* NewTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				0D5FF04726A57456000BD241 /* OnboardingViewModel.swift */,
 				0D8337AE26A962F900FD4A55 /* SettingsViewModel.swift */,
 				0D8337CA26A9A13800FD4A55 /* HomeViewModel.swift */,
+				0D2F8E8126ADD38600DAD93D /* TopCallListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -303,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				0D13A7DD269F3F0C00BD9922 /* Ringtone.swift */,
-				0DD204EA26A8A92F00C4CDD8 /* RingtoneCellModel.swift */,
+				0DD204EA26A8A92F00C4CDD8 /* PlayerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,27 +325,64 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		0D5FF04626A57141000BD241 /* Shared */ = {
+		0D2F8E6626AD4F3000DAD93D /* Popup */ = {
 			isa = PBXGroup;
 			children = (
 				0DECFF7A269DE9F700659800 /* SwipeUpForMoreViewController.swift */,
 				0DECFF7B269DE9F700659800 /* SwipeUpForMoreViewController.xib */,
-				0DECFF7E269DEA5200659800 /* TabbarController.swift */,
 				0DECFF84269DFCB500659800 /* AppRatingViewController.swift */,
 				0DECFF85269DFCB500659800 /* AppRatingViewController.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		0D2F8E6726AD4F4B00DAD93D /* Wallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				0D8337C026A987C100FD4A55 /* WallPaperViewController.swift */,
+				0D8337C126A987C100FD4A55 /* WallPaperViewController.xib */,
+			);
+			path = Wallpaper;
+			sourceTree = "<group>";
+		};
+		0D2F8E6826AD4F6300DAD93D /* Ringtone */ = {
+			isa = PBXGroup;
+			children = (
 				0D13A7D9269F3D0F00BD9922 /* RingtoneListViewController.swift */,
 				0D13A7DA269F3D0F00BD9922 /* RingtoneListViewController.xib */,
+				0D868A6C26AA180E00BB427E /* RingtoneViewController.swift */,
+				0D868A6D26AA180E00BB427E /* RingtoneViewController.xib */,
+				0D2F8E7B26ADCFB100DAD93D /* TopCallListViewController.swift */,
+				0D2F8E7C26ADCFB100DAD93D /* TopCallListViewController.xib */,
+			);
+			path = Ringtone;
+			sourceTree = "<group>";
+		};
+		0D2F8E6926AD4F9900DAD93D /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				0DF6674626A7024E0089AF8D /* SubscriptionViewController.swift */,
+				0DF6674726A7024E0089AF8D /* SubscriptionViewController.xib */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		0D2F8E6A26AD4FB800DAD93D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0D8337AA26A9628700FD4A55 /* SettingsViewController.swift */,
+				0D8337AB26A9628700FD4A55 /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0D5FF04626A57141000BD241 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0DECFF7E269DEA5200659800 /* TabbarController.swift */,
 				0D1F75CE26A068DF00818C21 /* HomeViewController.swift */,
 				0D1F75CF26A068DF00818C21 /* HomeViewController.xib */,
 				0DF6673D26A606650089AF8D /* MainNavigationController.swift */,
-				0DF6674626A7024E0089AF8D /* SubscriptionViewController.swift */,
-				0DF6674726A7024E0089AF8D /* SubscriptionViewController.xib */,
-				0D8337AA26A9628700FD4A55 /* SettingsViewController.swift */,
-				0D8337AB26A9628700FD4A55 /* SettingsViewController.xib */,
-				0D8337C026A987C100FD4A55 /* WallPaperViewController.swift */,
-				0D8337C126A987C100FD4A55 /* WallPaperViewController.xib */,
-				0D868A6C26AA180E00BB427E /* RingtoneViewController.swift */,
-				0D868A6D26AA180E00BB427E /* RingtoneViewController.xib */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -439,16 +482,17 @@
 		0DECFF88269E064400659800 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0D6CA820269EEE1300ED02D2 /* RingtonePlayerView.swift */,
-				0DECFF8C269E083F00659800 /* RingtonePlayerView.xib */,
 				0D6CA824269EF15800ED02D2 /* VerticalButton.swift */,
 				0D6CA822269EF11100ED02D2 /* VerticalButton.xib */,
+				0D6CA820269EEE1300ED02D2 /* RingtonePlayerView.swift */,
+				0DECFF8C269E083F00659800 /* RingtonePlayerView.xib */,
 				0DF6674426A6F7530089AF8D /* SubscriptionView.swift */,
 				0DF6674226A6F7380089AF8D /* SubscriptionView.xib */,
 				0D60884D26A8154E0046FDF2 /* VideoPlayerView.swift */,
 				0D8337C426A98E4D00FD4A55 /* FlashCallCollectionView.swift */,
 				0D213A9426AAAB2100AC48DC /* LiveCollectionView.swift */,
 				0D213A9E26AAE76300AC48DC /* Popular4KCollectionView.swift */,
+				0D2F8E8926AEAEBF00DAD93D /* NewCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -456,9 +500,14 @@
 		0DECFF89269E064B00659800 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0D8520EE26A56C310078D332 /* Onboarding */,
 				0D8520ED26A56C250078D332 /* Launch */,
+				0D8520EE26A56C310078D332 /* Onboarding */,
+				0D2F8E6626AD4F3000DAD93D /* Popup */,
+				0D2F8E6826AD4F6300DAD93D /* Ringtone */,
+				0D2F8E6A26AD4FB800DAD93D /* Settings */,
 				0D5FF04626A57141000BD241 /* Shared */,
+				0D2F8E6926AD4F9900DAD93D /* Subscription */,
+				0D2F8E6726AD4F4B00DAD93D /* Wallpaper */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -554,18 +603,16 @@
 			files = (
 				0D8337B326A9642200FD4A55 /* SettingsTableViewCell.xib in Resources */,
 				0D868A6F26AA180E00BB427E /* RingtoneViewController.xib in Resources */,
-				0D213A9D26AAE68700AC48DC /* Popular4KTableViewCell.xib in Resources */,
 				0D13A7DC269F3D0F00BD9922 /* RingtoneListViewController.xib in Resources */,
 				0DF6674126A6CBEE0089AF8D /* swipe.gif in Resources */,
-				0D213A9926AAB02C00AC48DC /* LiveTableViewCell.xib in Resources */,
 				0D5FF04C26A574C1000BD241 /* Onboarding1CollectionViewCell.xib in Resources */,
 				0DECFF75269DD61F00659800 /* call.json in Resources */,
 				0DECFF87269DFCB500659800 /* AppRatingViewController.xib in Resources */,
 				0DAA0B0C26A1B345001D2C36 /* OnBoardingViewController.xib in Resources */,
 				0DF6674926A7024E0089AF8D /* SubscriptionViewController.xib in Resources */,
 				0D8337BB26A986A400FD4A55 /* VideoPlayerCollectionViewCell.xib in Resources */,
+				0D2F8E7E26ADCFB100DAD93D /* TopCallListViewController.xib in Resources */,
 				0D145364269DA6F500458B46 /* Assets.xcassets in Resources */,
-				0D8337C926A9929400FD4A55 /* FlashCallTableViewCell.xib in Resources */,
 				0DF6674326A6F7380089AF8D /* SubscriptionView.xib in Resources */,
 				0D5FF05026A574D2000BD241 /* Onboarding2CollectionViewCell.xib in Resources */,
 				0D213A9326AAAA8700AC48DC /* LiveCollectionViewCell.xib in Resources */,
@@ -637,7 +684,7 @@
 				0D13A7E0269F419C00BD9922 /* RingtoneListViewModel.swift in Sources */,
 				0D5FF04B26A574C1000BD241 /* Onboarding1CollectionViewCell.swift in Sources */,
 				0D13A7DB269F3D0F00BD9922 /* RingtoneListViewController.swift in Sources */,
-				0D213A9826AAB02C00AC48DC /* LiveTableViewCell.swift in Sources */,
+				0D2F8E7A26ADBEC100DAD93D /* TopCallTableViewCell.swift in Sources */,
 				0DECFF78269DD64C00659800 /* LaunchScreenViewController.swift in Sources */,
 				0DAA0AF626A0F04F001D2C36 /* NetworkManager.swift in Sources */,
 				0D8337CB26A9A13800FD4A55 /* HomeViewModel.swift in Sources */,
@@ -648,17 +695,18 @@
 				0DF6674826A7024E0089AF8D /* SubscriptionViewController.swift in Sources */,
 				0D213A9526AAAB2100AC48DC /* LiveCollectionView.swift in Sources */,
 				0D8337C526A98E4D00FD4A55 /* FlashCallCollectionView.swift in Sources */,
+				0D2F8E8226ADD38600DAD93D /* TopCallListViewModel.swift in Sources */,
 				0D213A9226AAAA8700AC48DC /* LiveCollectionViewCell.swift in Sources */,
 				0DAA0B0426A0F581001D2C36 /* Service.swift in Sources */,
 				0D13A7DE269F3F0C00BD9922 /* Ringtone.swift in Sources */,
-				0DD204EB26A8A92F00C4CDD8 /* RingtoneCellModel.swift in Sources */,
+				0D2F8E7D26ADCFB100DAD93D /* TopCallListViewController.swift in Sources */,
+				0DD204EB26A8A92F00C4CDD8 /* PlayerModel.swift in Sources */,
 				0D1F75D026A068DF00818C21 /* HomeViewController.swift in Sources */,
 				0DAA0AFC26A0F2D4001D2C36 /* HTTPMethod.swift in Sources */,
 				0DAA0B0B26A1B345001D2C36 /* OnBoardingViewController.swift in Sources */,
 				0DAA0AFA26A0F2B3001D2C36 /* EndPointType.swift in Sources */,
 				0D8337B626A985F400FD4A55 /* RingtoneCollectionViewCell.swift in Sources */,
 				0DECFF83269DF6D300659800 /* UIImage.swift in Sources */,
-				0D8337C826A9929400FD4A55 /* FlashCallTableViewCell.swift in Sources */,
 				0DAA0AF126A0EEAE001D2C36 /* URLParameterEncoder.swift in Sources */,
 				0D8337BA26A986A400FD4A55 /* VideoPlayerCollectionViewCell.swift in Sources */,
 				0DECFF7C269DE9F700659800 /* SwipeUpForMoreViewController.swift in Sources */,
@@ -667,17 +715,21 @@
 				0D6CA825269EF15800ED02D2 /* VerticalButton.swift in Sources */,
 				0DAA0B0026A0F300001D2C36 /* NetworkLogger.swift in Sources */,
 				0D8337BE26A986CF00FD4A55 /* ImageCollectionViewCell.swift in Sources */,
+				0D2F8E7826ADB4E500DAD93D /* HomeTabBaseTableViewCell.swift in Sources */,
+				0D2F8E8A26AEAEBF00DAD93D /* NewCollectionView.swift in Sources */,
 				0DF6673E26A606650089AF8D /* MainNavigationController.swift in Sources */,
+				0D2F8E8826AEAE8600DAD93D /* NewTableViewCell.swift in Sources */,
+				0D2F8E8626AE99CD00DAD93D /* Popular4KTableViewCell.swift in Sources */,
 				0D14535B269DA6F400458B46 /* AppDelegate.swift in Sources */,
 				0D5FF04F26A574D2000BD241 /* Onboarding2CollectionViewCell.swift in Sources */,
 				0DAA0AE326A0E0A9001D2C36 /* CacheManager.swift in Sources */,
-				0D213A9C26AAE68700AC48DC /* Popular4KTableViewCell.swift in Sources */,
 				0D8337AC26A9628700FD4A55 /* SettingsViewController.swift in Sources */,
 				0D868A6E26AA180E00BB427E /* RingtoneViewController.swift in Sources */,
 				0DF6674526A6F7530089AF8D /* SubscriptionView.swift in Sources */,
 				0DAA0AFE26A0F2E7001D2C36 /* HTTPTask.swift in Sources */,
 				0DAA0AF826A0F279001D2C36 /* NetworkRouter.swift in Sources */,
 				0DAA0AED26A0EE85001D2C36 /* ParameterEncoding.swift in Sources */,
+				0D2F8E8426ADE63000DAD93D /* HomeLiveTableViewCell.swift in Sources */,
 				0DAA0AEB26A0EE5D001D2C36 /* JSONParameterEncoder.swift in Sources */,
 				0D5FF04826A57456000BD241 /* OnboardingViewModel.swift in Sources */,
 				0D13A7E4269F443500BD9922 /* RingtoneTableViewCell.swift in Sources */,
@@ -825,13 +877,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobidoo.RingtoneApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pernebayev.RingtoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -857,13 +910,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobidoo.RingtoneApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pernebayev.RingtoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

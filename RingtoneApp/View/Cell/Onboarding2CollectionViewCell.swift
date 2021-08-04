@@ -18,11 +18,6 @@ class Onboarding2CollectionViewCell: UICollectionViewCell, OnBoardingCellProtoco
         // Initialization code
         subscriptionView.delegate = self
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-    }
 }
 
 extension Onboarding2CollectionViewCell: SubscriptionViewDelegate {

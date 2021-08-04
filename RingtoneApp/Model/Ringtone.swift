@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RingtoneModel: Codable {
+struct URLModel: Codable {
     let preview_url, url: String
     
     var videoURL: String {
@@ -18,41 +18,24 @@ struct RingtoneModel: Codable {
     }
 }
 
-struct CallAPIResponse: Codable {
-    let id: Int
+struct BaseModel: Codable {
+    let id: Int?
     let nameCategory, urlPhoto: String
-    let array: [RingtoneModel]
-}
-
-protocol TopCallProtocol: Codable {
-    var link: String { get set }
-    var nameCategory: String { get set }
-    var urlPhoto: String { get set }
-    var array: [RingtoneModel] { get set }
-}
-
-struct TopCallModel: TopCallProtocol {
-    var link, nameCategory, urlPhoto: String
-    var array: [RingtoneModel]
-}
-
-struct TopLiveModel: TopCallProtocol {
-    var link, nameCategory, urlPhoto: String
-    var array: [RingtoneModel]
-}
-
-struct CategoryModel: Codable {
-    var link, nameCategory, urlPhoto: String
-}
-
-struct ChargeModel: TopCallProtocol {
-    var link, nameCategory, urlPhoto: String
-    var array: [RingtoneModel]
+    let link: String?
+    var array: [URLModel]?
+    
+    var urlPhotoFull: String {
+        return RingtoneApi.callList.environmentBaseURL + urlPhoto
+    }
+    var linkFull: String?  {
+        guard let link = link else {
+            return nil
+        }
+        return RingtoneApi.callList.environmentBaseURL + link
+    }
 }
 
 struct MainModel: Codable {
-    var topcall: TopCallModel
-    var toplive: TopLiveModel
-    var popular_4k, popular_live, categories_all: [CategoryModel]
-    var charge: ChargeModel
+    var topcall, toplive, charge: BaseModel
+    var popular_4k, popular_live, categories_all: [BaseModel]
 }

@@ -10,27 +10,34 @@ import UIKit
 protocol HomeViewModelDelegate: AnyObject {
     func errorDidAppear(message: String)
     func readyToReloadData()
+    var isFetching: Bool {get set}
 }
 
 class HomeViewModel {
-    let networkManager = NetworkManager()
+    private let networkManager = NetworkManager()
     weak var delegate: HomeViewModelDelegate?
     var mainData: MainModel? {
         didSet {
             generateLiveData()
         }
     }
-    var liveData: [RingtoneCellModel] = []
+    var liveData: [PlayerModel] = []
     
-    var topCallXOffset: CGFloat = 0
-    var topLiveXOffset: CGFloat = 0
-    var popular4KXOffset: CGFloat = 0
+    let numberOfRows: Int = 4
+    lazy var xOffsetArray: [CGFloat?] = Array(repeating: nil, count: numberOfRows)
     
-    func fetchData() {
+    init(delegate: HomeViewModelDelegate? = nil) {
+        self.delegate = delegate
+    }
+    
+    @objc func fetchData() {
+        delegate?.isFetching = true
         networkManager.getMain {[weak self] mainData, error in
             DispatchQueue.main.sync {[weak self, mainData] in
+                self?.delegate?.isFetching = false
+                
                 if var mainData = mainData {
-                    mainData.topcall.array.shuffle()
+                    mainData.topcall.array?.shuffle()
                     self?.mainData = mainData
                     self?.delegate?.readyToReloadData()
                 }else if let error = error {
@@ -41,11 +48,11 @@ class HomeViewModel {
     }
     
     func generateLiveData() {
-        guard let mainData = mainData else {
+        guard let mainData = mainData, let topLiveArray = mainData.toplive.array else {
             return
         }
-        liveData = mainData.toplive.array.map { ringtone in
-            return RingtoneCellModel(ringtoneModel: ringtone)
+        liveData = topLiveArray.map { ringtone in
+            return PlayerModel(ringtoneModel: ringtone)
         }
     }
 }

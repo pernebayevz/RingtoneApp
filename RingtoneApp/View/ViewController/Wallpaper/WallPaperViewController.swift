@@ -29,7 +29,6 @@ class WallPaperViewController: UIViewController {
         }
     }
     private var playerLooper: AVPlayerLooper?
-    private let disposeBag = DisposeBag()
     
     init(type: WallPaperType) {
         self.type = type
@@ -43,6 +42,10 @@ class WallPaperViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
+    }
+    
+    deinit {
+        print("deinit WallPaperViewController")
     }
     
     private func setupViewController() {
@@ -65,12 +68,12 @@ class WallPaperViewController: UIViewController {
             scrollView.delegate = self
         }
         
-        shareBtn.tapEvent.subscribe(onNext: {[unowned self]_ in
+        _ = shareBtn.tapEvent.subscribe(onNext: {[unowned self]_ in
             self.share()
-        }).disposed(by: disposeBag)
-        downLoadBtn.tapEvent.subscribe(onNext: {[unowned self]_ in
+        })
+        _ = downLoadBtn.tapEvent.subscribe(onNext: {[unowned self]_ in
             self.download()
-        }).disposed(by: disposeBag)
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {

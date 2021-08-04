@@ -13,20 +13,18 @@ extension UIView {
     }
     
     func loadNib(with name: String? = nil) -> UIView? {
+        let nibName = name ?? Self.nibName
         let bundle = Bundle(for: type(of: self))
-        
-        guard let nibName = name ?? type(of: self).description().components(separatedBy: ".").last else {
-            return nil
-        }
-        
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    func xibSetup() {
-        guard let view = loadNib() else {
+    func xibSetup(with name: String? = nil) {
+        guard let view = loadNib(with: name) else {
+            print("No .xib file at given path and name")
             return
         }
+        
         // use bounds not frame or it'll be offset
         view.frame = bounds
         // Adding custom subview on top of our view
@@ -41,9 +39,5 @@ extension UIView {
                                                       options: [],
                                                       metrics: nil,
                                                       views: ["childView": view]))
-//        NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
-//        NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
-//        NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
-//        NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
 }

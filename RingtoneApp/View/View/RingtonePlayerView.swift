@@ -12,7 +12,7 @@ import RxCocoa
 import AVFoundation
 
 protocol RingtonePlayerViewDelegate: AnyObject {
-    func share(ringtone: RingtoneCellModel?)
+    func share(ringtone: PlayerModel?)
 }
 
 @IBDesignable
@@ -26,8 +26,7 @@ class RingtonePlayerView: UIView {
     @IBOutlet weak var pauseOrPlayBtn: VerticalButton!
     @IBOutlet weak var saveBtn: VerticalButton!
     
-    private let disposeBag = DisposeBag()
-    private var ringTone: RingtoneCellModel?
+    private var ringTone: PlayerModel?
     weak var delegate: RingtonePlayerViewDelegate?
     
     override init(frame: CGRect) {
@@ -40,6 +39,10 @@ class RingtonePlayerView: UIView {
         setupView()
     }
     
+    deinit {
+        print("deinit RingtonePlayerView")
+    }
+    
     private func setupView() {
         xibSetup()
         subscribeToButtonTaps()
@@ -47,20 +50,20 @@ class RingtonePlayerView: UIView {
     }
     
     private func subscribeToButtonTaps() {
-        shareBtn.tapEvent.subscribe(onNext: {[unowned self] in
+        _ = shareBtn.tapEvent.subscribe(onNext: {[unowned self] in
             print("shareBtn tapped")
             self.delegate?.share(ringtone: ringTone)
-        }).disposed(by: disposeBag)
-        likeBtn.tapEvent.subscribe(onNext: {
+        })
+        _ = likeBtn.tapEvent.subscribe(onNext: {
             print("likeBtn tapped")
-        }).disposed(by: disposeBag)
-        pauseOrPlayBtn.tapEvent.subscribe(onNext: {[unowned playerView] in
+        })
+        _ = pauseOrPlayBtn.tapEvent.subscribe(onNext: {[unowned playerView] in
             print("pauseOrPlayBtn tapped")
             playerView?.playOrPauseVideoImmediately()
-        }).disposed(by: disposeBag)
-        saveBtn.tapEvent.subscribe(onNext: {
+        })
+        _ = saveBtn.tapEvent.subscribe(onNext: {
             print("saveBtn tapped")
-        }).disposed(by: disposeBag)
+        })
     }
     
     override func layoutSubviews() {
@@ -69,9 +72,12 @@ class RingtonePlayerView: UIView {
     
     func prepareForReuse() {
         pauseOrPlayBtn.set(title: "Stop", image: UIImage(named: "stop"))
+        playerView.player = nil
+        ringTone = nil
+        delegate = nil
     }
     
-    func setupContent(with ringtone: RingtoneCellModel) {
+    func setupContent(with ringtone: PlayerModel) {
         self.ringTone = ringtone
         
         if ringtone.player == nil, let url = URL(string: ringtone.ringtoneModel.videoURL) {

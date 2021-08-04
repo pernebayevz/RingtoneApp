@@ -15,7 +15,16 @@ class RingtoneListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let disposeBag = DisposeBag()
-    private let viewModel = RingtoneListViewModel()
+    private let viewModel: RingtoneListViewModel
+    
+    init(dataSource: [PlayerModel] = []) {
+        viewModel = RingtoneListViewModel(dataSource: dataSource)
+        super.init(nibName: "RingtoneListViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,14 +68,16 @@ class RingtoneListViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
         
-        viewModel.fetchRingtones()
+        viewModel.fetchRingtonesIfNeeded()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        viewModel.fetchRingtones()
-//        let swipePopup = SwipeUpForMoreViewController()
-//        swipePopup.show(in: self)
+        let swipePopup = SwipeUpForMoreViewController()
+        swipePopup.show(in: self)
+        if let cell = tableView.visibleCells.first as? RingtoneTableViewCell {
+            cell.play()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -74,11 +85,6 @@ class RingtoneListViewController: UIViewController {
         if let cell = tableView.visibleCells.first as? RingtoneTableViewCell {
             cell.pause()
         }
-    }
-    
-    private func show(errorMessage: String) {
-        let banner = NotificationBanner(title: "Couldn't fetch ringtones", subtitle: errorMessage, style: .danger)
-        banner.show()
     }
 }
 
@@ -93,7 +99,7 @@ extension RingtoneListViewController: UITableViewDelegate {
 }
 
 extension RingtoneListViewController: RingtonePlayerViewDelegate {
-    func share(ringtone: RingtoneCellModel?) {
+    func share(ringtone: PlayerModel?) {
         guard let ringtone = ringtone, let url = URL(string: ringtone.ringtoneModel.url) else {
             return
         }
